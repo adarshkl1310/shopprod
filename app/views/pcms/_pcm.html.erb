@@ -1,0 +1,18 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to pcm.user.username.capitalize, profil_path(pcm.user.id) %></h5>
+    <h6><b><%=pcm.user.business_type.capitalize%></b>
+    <%=pcm.user.contry%></h6> 
+      <h6><%= time_ago_in_words(pcm.created_at) %> ago</h6>
+
+  </br>
+ <p class="text-secondary"><%= pcm.content %></p>
+  </br>
+  <div class="links btn-group"> 
+   <% if pcm.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_pa_pcm_path(pcm.pa, pcm) %>
+<%= link_to "Delete", pa_pcm_path(pcm.pa, pcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%></div>
+</div></ol>

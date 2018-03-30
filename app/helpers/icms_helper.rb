@@ -1,0 +1,2 @@
+module IcmsHelper
+end

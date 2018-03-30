@@ -1,0 +1,58 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @ma.user.username.capitalize, profil_path(@ma.user.id) %></h5>
+    <h6><b><%=@ma.user.business_type.capitalize%> / </b>
+    <%=@ma.user.contry%> . <%=@ma.user.city%></h6>
+     <h6><%= time_ago_in_words(@ma.created_at) %> ago</h6>
+
+    
+    <div class="aasproductinfo ">
+      <p class="text-secondary"><b>Post Type - </b><%= @ma.post_type %></p>
+ 
+       <p class="text-secondary"><b>Market type -</b> <%=@ma.market_type.capitalize%></p>
+     <p class="text-secondary"><b>Name - </b><%= @ma.product_name %></p>
+      </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @ma.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back",mas_path, class: "btn btn-default" %>
+    <% if @ma.user_id == current_user.id %>
+
+   <%= link_to "Delete",ma_path(@ma), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@ma.mcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @ma.mcms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'mcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,49 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+
+</br>
+<div class="row">
+<div class="col-md-5 col-md-offset-1 "> 
+<%= render 'search' %>
+</div>
+
+
+
+<div class="col-md-8 col-md-offset-1">
+
+<%@zza.each do  |offer|%>
+
+<div class="panel panel-default">
+<ol>
+<h5><b><%=offer.shop_name.capitalize%></b></h5> 
+<h5><%=offer.offer.capitalize%></h5>
+<h5><%=offer.offerdaystart%></h5>
+<h5><%=link_to "view shop",prod_path(offer.user.id),class: "btn btn-default btn-sm" %></h5>
+<h5><b><%=offer.user.business_type.capitalize%> / </b>
+<%=offer.user.contry%><b> . </b><%=offer.user.city%></h5>
+<h6><%= time_ago_in_words(offer.created_at) %> ago</h6>
+
+<% if user_signed_in? %> 
+<% if offer.user_id == current_user.id %>
+<h6><%= link_to "Edit", edit_zza_path(offer) %>
+<%= link_to "Delete", zza_path(offer), method: :delete, data: { confirm: "Are you sure?" } %>
+</h6>
+<%end%>
+<%end%>
+</ol>
+</div>
+<%end%>
+
+</div>
+
+</br>
+</br>
+</br>
+
+</br>
+</br>
+</br>
+
+</div>

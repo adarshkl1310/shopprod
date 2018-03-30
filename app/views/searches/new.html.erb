@@ -1,0 +1,92 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+<div class="row">
+
+<div class="col-md-2 col-md-offset-4">
+<ol><b><h4 class="text-primary">Search Shop</h4></b></ol>
+</div>
+
+</div>
+<%= form_for @search, html: {class: "pure-form"} do |s|%>
+</br>
+<div class="row">
+<div class="searchbox">
+<ol>
+
+<div class="col-md-2 col-md-offset-1">
+
+	<div class="field">
+	<%= s.label :name,"Name"%></br>
+   <%= s.text_field :keywords,placeholder:'Shop Name'%>
+    </div>
+    </div>
+
+    <div class="col-md-2">
+	<div class="field">
+	<%= s.label :city,"City"%></br>
+	<%=s.text_field :keywords2,placeholder:'Shop City'%>
+    </div>
+    </div>
+    
+    <div class="col-md-2">
+    <div class="field">
+	<%= s.label :country,"Country"%></br>
+	<%=s.text_field :keywords3,placeholder:'Shop Country'%>
+    </div>
+    </div>
+    
+    <div class="col-md-2">
+    
+	<div class="field">
+    <%= s.label :market_type,"Market Type"%></br>
+	<%=s.select :keywords4,options_for_select([["Select One", ""],
+    'Local', 
+'State', 
+'country', 
+'Global',]),{},{class: "form form-group form-control"} 
+
+	%>
+    </div>
+    </div>
+
+   </ol>
+</div>
+
+</br>
+ <div class="col-md-1">
+    
+	<ol><div class="actions"><%=s.submit "search",class: "btn btn-primary btn-md"%></ol>
+</div>
+</div>
+
+	<%end%>
+	</br>
+<div class="row">
+ <div class="col-md-2 col-md-offset-4">
+	<ol><%= link_to "back",prods_path,class: "btn btn-lg"%></ol>
+</div>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+	</div>

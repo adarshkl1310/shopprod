@@ -1,0 +1,17 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to xcm.user.username.capitalize, profil_path(xcm.user.id) %></h5>
+    <h6><b><%=xcm.user.business_type.capitalize%></b>
+    <%=xcm.user.contry%></h6>
+      <h6><%= time_ago_in_words(xcm.created_at) %> ago</h6>
+  </br>
+ <p class="text-secondary"><%= xcm.content %></p>
+  </br>
+  <div class="links btn-group">
+   <% if xcm.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_xa_xcm_path(xcm.xa, xcm) %>
+<%= link_to "Delete", xa_xcm_path(xcm.xa, xcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%></div>
+</div></ol>

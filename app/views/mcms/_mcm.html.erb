@@ -1,0 +1,18 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to mcm.user.username.capitalize, profil_path(mcm.user.id) %></h5>
+    <h6><b><%=mcm.user.business_type.capitalize%></b>
+    <%=mcm.user.contry%></h6>
+      <h6><%= time_ago_in_words(mcm.created_at) %> ago</h6>
+
+  </br>
+ <p class="text-secondary"><%= mcm.content %></p>
+  </br>
+  <div class="links btn-group">
+   <% if mcm.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_ma_mcm_path(mcm.ma, mcm) %>
+<%= link_to "Delete", ma_mcm_path(mcm.ma, mcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%></div>
+</div></ol>

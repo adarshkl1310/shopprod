@@ -1,0 +1,58 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+		<div class="col-md-9 col-md-offset-1">
+			<div class="panel-group"> 
+		
+		<div class="panel panel-default">
+		<div class="panel-heading">
+	 
+		<h5><%=link_to @va.user.username.capitalize, profil_path(@va.user.id) %></h5>
+		<h6><b><%=@va.user.business_type.capitalize%> / </b>
+		<%=@va.user.contry%> . <%=@va.user.city%></h6>
+	 <h6><%= time_ago_in_words(@va.created_at) %> ago</h6>
+		
+		<div class="aasproductinfo ">
+		<p class="text-secondary"><b>Post Type - </b><%= @va.post_type %></p>
+		
+			<p class="text-secondary"><b>Market type -</b> <%=@va.market_type.capitalize%></p>
+		<p class="text-secondary"><b>Name - </b><%= @va.product_name %></p>
+			 </div>
+
+		<div class="aasdescription">
+	 <p class="text-secondary"> <%= @va.description %></p>
+		</div>
+								 
+	 <div class="links btn-group">
+	 <%= link_to "Back", vas_path, class: "btn btn-default" %>
+		<% if @va.user_id == current_user.id %>
+
+	 <%= link_to "Delete", va_path(@va), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+	 </div>
+
+
+	 </div>
+	 </div>
+
+	 
+
+
+ <div class="panel-heading">
+	<h4>(<%=@va.vcms.count%>) Comment</h4>
+	<div class="panel-body">
+	<div class="replyquestion">
+
+ <p><%= render @va.vcms %></p>
+ </div>
+ </div>
+
+		<div class="panel-body">
+ <%= render 'vcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

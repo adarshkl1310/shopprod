@@ -1,0 +1,18 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to vcm.user.username.capitalize, profil_path(vcm.user.id) %></h5>
+    <h6><b><%=vcm.user.business_type.capitalize%></b>
+    <%=vcm.user.contry%></h6>
+      <h6><%= time_ago_in_words(vcm.created_at) %> ago</h6>
+  </br>
+ <p class="text-secondary"><%= vcm.content %></p>
+  </br>
+  <div class="links btn-group">
+   <% if vcm.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_va_vcm_path(vcm.va, vcm) %>
+<%= link_to "Delete", va_vcm_path(vcm.va, vcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%>
+</div>
+</div></ol>

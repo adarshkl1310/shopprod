@@ -1,0 +1,59 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @fa.user.username.capitalize, profil_path(@fa.user.id) %></h5>
+    <h6><b><%=@fa.user.business_type.capitalize%> / </b>
+    <%=@fa.user.contry%> . <%=@fa.user.city%></h6>
+      <h6><%= time_ago_in_words(@fa.created_at) %> ago</h6>
+ 
+    
+    <div class="aasproductinfo ">
+        <p class="text-secondary"><b>Post Type - </b><%= @fa.post_type %></p>
+       
+          <p class="text-secondary"><b>Market type -</b> <%=@fa.market_type.capitalize%></p>
+    
+ <p class="text-secondary"><b>Name - </b><%= @fa.product_name %></p>
+    </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @fa.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back", fas_path, class: "btn btn-default" %>
+    <% if @fa.user_id == current_user.id %>
+
+   <%= link_to "Delete", fa_path(@fa), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@fa.fcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @fa.fcms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'fcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

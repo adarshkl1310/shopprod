@@ -1,0 +1,58 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @ra.user.username.capitalize, profil_path(@ra.user.id) %></h5>
+    <h6><b><%=@ra.user.business_type.capitalize%> / </b>
+    <%=@ra.user.contry%> . <%=@ra.user.city%></h6>
+      <h6><%= time_ago_in_words(@ra.created_at) %> ago</h6>
+
+    
+    <div class="aasproductinfo ">
+     <p class="text-secondary"><b>Post Type - </b><%= @ra.post_type %></p>
+  
+      <p class="text-secondary"><b>Market type -</b> <%=@ra.market_type.capitalize%></p>
+    <p class="text-secondary"><b>Name - </b><%= @ra.product_name %></p>
+    </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @ra.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back", ras_path, class: "btn btn-default" %>
+    <% if @ra.user_id == current_user.id %>
+
+   <%= link_to "Delete", ra_path(@ra), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@ra.rcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @ra.rcms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'rcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

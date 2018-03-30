@@ -1,0 +1,96 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+
+  <h4>&nbsp;<b><%="School, College, University group"%></b></h4>
+ </br>
+
+<div class="row">
+ <div class="col-md-7">
+ <div class="panel panel-default">
+ <h4 class="text-center text-info"><b>Share product or business information.</b></h4>
+ <%= render 'form' %>
+ 
+ </div>
+ </div>
+    <div class="col-md-4 visible-md visible-lg visible-xl">
+ </br>
+ </br>
+<ol><h4 class="text-info text-center">A place Shares and gather, Products or business information in School, College, University group.</h4></ol>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </div>
+ <div class="col-md-3 col-md-offset-2">
+<div class="panel panel-default">
+<h5 class="text-center"><%="School, College, University group"%></h5>
+<h4 class="text-center">users</h4>
+<h5 class="text-center"><%=link_to "view all user",new_ka_path%></h5>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-9">	
+
+
+<%@kas.each do |ka| %>
+<div class="panel panel-default">
+<div class="panel-heading">
+<ol>
+<h5><%=link_to ka.user.username.capitalize, profil_path(ka.user.id)%>  </h5>
+<h6><b><%=ka.user.business_type.capitalize%> / </b>
+<%=ka.user.contry%><b> . </b><%=ka.user.city%></h6>
+  <h6><%= time_ago_in_words(ka.created_at) %> ago</h6>
+</br>
+</ol>
+<div class="aasproductinfo ">
+<ol>
+<p class="text-secondary"><b>Post Type -</b> <%=ka.post_type%></p>
+<p class="text-secondary"><b>Market Type -</b> <%=ka.market_type%></p>
+<p class="text-secondary"><b>Name - </b><%=ka.product_name.first(250)  %></p>
+</ol>
+</div>
+
+<div class="aasdescription">
+<ol>
+<p class="text-muted"><%= ka.description.first(500) %> </p>
+</br>
+<h5 class="text-left">(<%=ka.kcms.count%>) Comment</h5>
+<h4>
+<%= link_to "View Post", ka,class: "my-primary btn" %>
+</h4>
+</ol>
+</div>
+</div>
+</div>
+
+<% end %>
+</div>
+<div class="col-md-3 visible-md visible-lg visible-xl">	
+<div class="panel-group">
+<%@users.each do |i|%>
+
+<div class="panel panel-default">
+<ol>
+<%=link_to i.username.capitalize.first(20),profil_path(i.id)  %>
+<p class="text-muted"><b><%=i.business_type.capitalize%> . </b><%=i.contry.capitalize.first(15)%></p>
+</ol>
+</div>
+<%end%>
+</div>
+</div>
+
+
+
+</div>
+
+</div>

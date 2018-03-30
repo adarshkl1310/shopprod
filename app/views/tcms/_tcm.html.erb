@@ -1,0 +1,17 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to tcm.user.username.capitalize, profil_path(tcm.user.id) %></h5>
+    <h6><b><%=tcm.user.business_type.capitalize%></b>
+    <%=tcm.user.contry%></h6>
+     <h6><%= time_ago_in_words(tcm.created_at) %> ago</h6> 
+  </br>
+ <p class="text-secondary"><%=tcm.content %></p>
+  </br>
+  <div class="links btn-group">
+ <% if tcm.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_tt_tcm_path(tcm.tt,tcm) %>
+<%= link_to "Delete", tt_tcm_path(tcm.tt,tcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%></div>
+</div></ol>

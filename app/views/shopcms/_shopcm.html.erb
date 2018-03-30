@@ -1,0 +1,13 @@
+
+  <div class="panel panel-default">
+<ol>
+</br>
+
+<h5><%=link_to shopcm.user.username,profil_path(shopcm.user.id).capitalize%></h5> 
+ <h6><b><%=shopcm.user.business_type.capitalize %></b>
+   <%=shopcm.user.contry%></h6></br> 
+   <p><%= shopcm.content %></p>
+ 
+                          
+<%= link_to "Delete", shop_shopcm_path(shopcm.shop, shopcm), method: :delete, data: { confirm: "Are you sure?",class: "btn btn-default" } %>
+</div>

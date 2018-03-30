@@ -1,0 +1,20 @@
+
+<%= form_for @zza do |f|%>
+
+<%= f.label :shop_name,'Brand Name/Shop Name'%> <small class="text-info">(required)</small>
+<b><%= f.text_field :shop_name,placeholder:'',:maxlength=>"20",:size=>"30px",class: "form-control"%></b>
+</br>
+
+<%= f.label :offer,'Offer Title'%> <small class="text-info">(required)</small>
+<b><%= f.text_field :offer,placeholder:'',:maxlength=>"120",:size=>"30px",class: "form-control"%></b>
+</br>
+
+<%= f.label :offerday,'Offer Day'%> <small class="text-info">(required)</small>
+<b><%= f.text_field :offerdaystart,placeholder:'',:maxlength=>"30",:size=>"30px",class: "form-control"%></b>
+</br>
+<%= f.submit"Publish", :title => 'Mark complete', :rel => 'tooltip',class: "btn btn-md"%>
+
+<h5>If you are creating a second offer post, delete your old offer post on your shop page.</h5>
+<%end%>
+
+

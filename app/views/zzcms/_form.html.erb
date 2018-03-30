@@ -1,0 +1,15 @@
+
+  <div class="panel panel-default">
+    
+<div class="buyselcomment">
+<h3>Add a Comment</h3>
+
+ <div class="panel-heading">
+<%=simple_form_for([@zza,@zza.zzcms.build]) do |f| %>
+	<%= f.text_area :content, label: ".",:rows => 6,:cols => 75 %></br>
+	<%= f.button :submit, :class => 'btn-custom' %>
+	 </div>
+<% end %>
+
+</div>
+</div>

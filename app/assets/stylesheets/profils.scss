@@ -1,0 +1,174 @@
+// Place all the styles related to the Profils controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.responsive {
+    width: 100%;
+    height: 100%;
+}
+
+
+.btn-responsive {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
+
+.profile{
+  
+      margin: 0;
+      padding:0;
+    
+    overflow: hidden;
+    
+}
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+.userprofile{
+
+   margin: 0;
+
+     overflow: hidden;
+
+
+}
+
+.userimg img{
+  position :relative;
+  left:33px;
+
+
+
+}
+
+.userdeletebtn {position:absolute;
+          left:104px;
+
+          
+
+
+          }
+
+.addphoto{position:relative;
+          left:246px;
+          
+  
+}
+
+.addphotobody{position:relative;
+          right:24px;
+          
+
+}
+
+
+.addphoto h1{position:relative;
+          left:36px;
+          
+}
+
+.mshop b{position:relative;
+          left:24px;
+           
+}  
+
+.mshop {position:relative;
+          left:5px;
+          top:00px; 
+           width: 100%;
+ }
+
+.mshop img{position:relative;
+           top:7px;
+           left:5px;
+            
+
+           }
+
+
+     .userinfo  { position: absolute;
+              left: 200px;
+              top:-10px ;
+            
+ }
+
+.myshop { position:relative;
+          left:260px;
+          top:20px ;
+           
+ }
+
+
+.shopinfo{
+  position:absolute;
+  left:46px;
+  top:27px;
+   
+}
+
+.shopinfo h6{word-wrap: break-word;
+   width:18em; 
+    border: 0px solid #000000;
+    
+
+}
+
+
+
+
+.addbusinessinfo{ position:relative;
+              
+                  bottom:12px;
+                
+
+                 }
+
+
+.companyinfo{position:relative;
+             left:60px;
+              width: 100%;
+}
+
+.companywidth{ width: 18em;}
+
+.usermessage{position:relative;
+             bottom:10px;
+          
+}
+
+
+.addproductinfo{position:relative;
+                  
+                  bottom:12px;
+                
+}
+
+
+
+
+
+
+.userproduct{position:relative;
+             left:0px;
+              
+}
+
+.userproductinfo{position:relative;
+                 right:0px;
+              
+}
+
+
+.userproductinfo span{position:relative;
+                 left:0px;
+                
+}
+

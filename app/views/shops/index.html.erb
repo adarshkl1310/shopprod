@@ -1,0 +1,108 @@
+
+</br>
+</br>
+</br>
+</br>
+<div class="col-md-8 col-md-offset-2">
+
+<h3 class="text-center text-primary"><%="About Shopprod.com"%></h3>
+</br>
+<h4 class="text-center">Shopprod.com connect the World's shops and businesses.</br> We also help you to share and gather products or bussiness information.</h4>
+
+</br>
+</div>
+
+
+<div class="col-md-8 col-md-offset-2">
+
+<h3 class="text-center text-primary"><%="Our Mission"%></h3>
+</br>
+<h4 class="text-center">It's simple: To make doing business easy anywhere</h4>
+</br>
+</br>
+</div>
+
+
+
+<div class="col-md-12">
+
+<h3 class="text-center text-primary"><%="Products"%></h3>
+</br>
+<div class="col-md-3">
+<h4 class="text-center"><b>Home</b></h4>
+<h4 class="text-center"><%= image_tag("photos/home.png",:size => "260x180")%> </h4>
+<p class="text-center">A place to Share and gather product information like buy, sell, ask questions and view the real-time posts created by other registered users. Everyone can view the posts and user profile, only the joined users can comment on what they see.</p>
+</div>
+
+<div class="col-md-3">
+<h4 class="text-center"><b>Shop</b></h4>
+<h4 class="text-center"><%= image_tag("photos/newshop.png",:size => "260x180")%> </h4>
+<p class="text-center">We offer shop to sell a user's products, skills, services and more. You can also see other shops information like products, market types, days open, timings. Registered users can also chat with them for their requirements.</p>
+</div>
+
+<div class="col-md-3">
+<h4 class="text-center"><b>Groups</b></h4>
+<h4 class="text-center"><%= image_tag("photos/group.png",:size => "260x180")%> </h4>
+<p class="text-center">Registered users can post in a group where subscribers can get product information, updates and real-time posts belonging to the respective industry type.</p>
+</div>
+
+<div class="col-md-3">
+<h4 class="text-center"><b>Profile</b></h4>
+<h4 class="text-center"><%= image_tag("photos/profile.png",:size => "260x180")%> </h4>
+<p class="text-center">Profile contains a user's shop or business information like name, telephone number, year of establishment, their story and more. Registered users can add their products to the shop. They can also view other's profiles and contact them.</p>
+</div>
+
+
+</div>
+
+
+<div class="col-md-12">
+</br>
+
+<h3 class="text-center text-primary"><%="Contact Us"%></h3>
+</br>
+<div class="row">
+
+
+<div class="col-sm-6">
+<h4 class="text-center"><b><%="Office Address"%></b></h4>
+
+</br>
+<h5 class="text-center"><%="50 Feet Rd 21st Cross Rd 20th Main Rd"%></h5>
+<h5 class="text-center"><%="Girinagar - 560085 "%></h5>
+<h5 class="text-center"><%="Bengaluru, India"%></h5>
+<h5 class="text-center"><%="Email Address - shopprod1@gmail.com"%></h5>
+<h5 class="text-center"><%="©Copyright - shopprod.com"%></h5>
+</div>
+
+
+</br>
+<% if user_signed_in? %>
+
+
+<div class="col-sm-4 col-md-offset-1">
+<h4 class="text-center"><b><%="Share Your Feedback."%></b></h4>
+
+<%= simple_form_for @contant do |f|%>
+
+<b><%= f.text_field :phone_email_number,placeholder:'Phone num / E-mail Address',:maxlength=>"500",:size=>"30px",class: "form-control"%></b>
+
+</br>
+
+<b><%= f.text_area :detail,placeholder:'Description',:maxlength=>"4000",:rows => 2,:cols => 45,class: "form-control"  %></b>
+</br>
+
+<div class="text-center">
+<%= f.submit"Post", :title => "", :rel => 'tooltip',class: "my-primary  btn"%>
+
+
+<%end%>
+</div>
+<%else%>
+<%=image_tag("photos/shop2.png",:size => "150x80",class: "img-responsive center-block")%>
+</div>
+
+<%end%>
+</div>
+</div>
+

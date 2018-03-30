@@ -1,0 +1,57 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @za.user.username.capitalize, profil_path(@za.user.id) %></h5>
+    <h6><b><%=@za.user.business_type.capitalize%> / </b>
+    <%=@za.user.contry%> . <%=@za.user.city%></h6>
+      <h6><%= time_ago_in_words(@za.created_at) %> ago</h6>
+    
+    <div class="aasproductinfo ">
+     <p class="text-secondary"><b>Post Type - </b><%= @za.post_type %></p>   
+  
+     <p class="text-secondary"><b>Market type -</b> <%=@za.market_type.capitalize%></p>
+    <p class="text-secondary"><b>Name - </b><%= @za.product_name %></p>
+    </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @za.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back", zas_path, class: "btn btn-default" %>
+    <% if @za.user_id == current_user.id %>
+
+   <%= link_to "Delete", za_path(@za), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@za.zcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @za.zcms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'zcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

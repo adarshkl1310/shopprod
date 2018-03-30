@@ -1,0 +1,99 @@
+
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+
+<h4>&nbsp;<b><%="Agriculture, Aquatic, Food & Beverages group"%></b></h4>
+ </br>
+
+
+ <div class="row">
+ <div class="col-md-7">
+ <div class="panel panel-default">
+ <h4 class="text-center text-info"><b>Share product or business information.</b></h4>
+ <%= render 'form' %>
+ 
+ </div>
+ </div>
+ <div class="col-md-4 visible-md visible-lg visible-xl">
+ </br>
+ </br>
+<ol><h4 class="text-info text-center">A place Shares and gather, Products or business information in Agriculture, Food & Beverages group.</h4></ol>
+ </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  
+ </div>
+ <div class="col-md-3 col-md-offset-2">
+<div class="panel panel-default">
+<h5 class="text-center"><%="Agriculture, Food & Beverages group"%></h5>
+<h4 class="text-center">users</h4>
+<h5 class="text-center"><%=link_to "view all user",new_aa_path%></h5>
+</div>
+</div>
+
+</div>
+ 
+
+<div class="row">
+<div class="col-md-9">	
+
+
+<%@aas.each do |aa| %>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<ol>
+<h5><%=link_to aa.user.username.first(30).capitalize, profil_path(aa.user.id)%>  </h5>
+<h5><b><%=aa.user.business_type.capitalize%> / </b>
+<%=aa.user.contry%><b> . </b><%=aa.user.city.first(20).capitalize%></h5>
+ <h6><%= time_ago_in_words(aa.created_at) %> ago</h6>
+ </br>
+</ol>
+<div class="aasproductinfo ">
+<ol>
+<p class="text-secondary"><b>Post Type -</b> <%=aa.post_type%></p>
+<p class="text-secondary"><b>Market type -</b> <%=aa.market_type%></p>
+</ol>
+</div>
+
+<div class="aasdescription">
+<ol>
+<p class="text-secondary"><b>Name - </b><%=aa.product_name.first(210) %></p>
+<p class="text-muted"><%= aa.description.first(510) %> </p>
+</br>
+<h5>(<%=aa.acms.count%>) Comment</h5>
+
+<h4>
+<%= link_to "View Post", aa,class: "my-primary btn" %>
+</ol>
+</h4></div>
+</div>
+</div>
+<% end %>
+</div>
+
+
+<div class="col-md-3  visible-md visible-lg visible-xl">	
+
+<div class="panel-group">
+<%@users.each do |i|%>
+
+<div class="panel panel-default">
+<ol>
+<%=link_to i.username.capitalize.first(20), profil_path(i.id)%>
+<p class="text-muted"><b><%=i.business_type.capitalize%> . </b><%=i.contry.capitalize.first(15)%></p>
+</ol>
+</div>
+<%end%>
+</div>
+</div>
+
+
+
+</div>
+
+</div>

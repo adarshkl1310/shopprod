@@ -1,0 +1,9 @@
+
+<h3><%=form_tag buysels_path, :method => 'get' do %>
+  
+   <h4> <%= text_field_tag :search, params[:search], :size=>"20", placeholder: "  Prod or biz Name",class: "form-control" %>
+    <%= submit_tag "Search", :product_name => nil,class: "btn btn-primary" %>
+    </h4>
+  
+<% end %>
+</h3>

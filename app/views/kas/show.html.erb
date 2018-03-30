@@ -1,0 +1,58 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @ka.user.username.capitalize, profil_path(@ka.user.id) %></h5>
+    <h6><b><%=@ka.user.business_type.capitalize%> / </b>
+    <%=@ka.user.contry%> . <%=@ka.user.city%></h6>
+   <h6><%= time_ago_in_words(@ka.created_at) %> ago</h6>
+
+    
+    <div class="aasproductinfo ">
+        <p class="text-secondary"><b>Post Type - </b><%= @ka.post_type %></p>
+
+      <p class="text-secondary"><b>Market type -</b> <%=@ka.market_type.capitalize%></p>
+         <p class="text-secondary"><b>Name - </b><%= @ka.product_name %></p>
+    </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @ka.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back", kas_path, class: "btn btn-default" %>
+    <% if @ka.user_id == current_user.id %>
+
+   <%= link_to "Delete", ka_path(@ka), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@ka.kcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @ka.kcms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'kcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

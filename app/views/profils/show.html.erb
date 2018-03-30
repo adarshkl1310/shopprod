@@ -1,0 +1,412 @@
+
+<div class="profile container-fluid">
+
+</br>
+</br>
+</br>
+</br>
+<div class="container-fluid">
+<div class="jumbotron">
+<div class="row">
+
+<div class="col-md-3">  
+<div class="panel panel-default">
+<%if @user.profils.length == 0%>
+
+<div class="userimg">
+<ol><%= image_tag("photos/user.png",width: "80px")%></ol>
+
+</div>
+
+<%end%>
+
+<%@user.profils.limit(1).each do |profil|%>
+<div class="mshop">
+
+
+<ol><%= image_tag profil.uphoto.url(:thumb),:size => "100x100", :crop => :fill%></ol></br>
+
+
+<b>&nbsp;&nbsp;&nbsp;Birth year -  <%=profil.date_of_birth%></b>
+
+</div>
+
+
+</br>
+<div class="userdeletebtn">
+
+<% if user_signed_in? %> 
+<% if profil.user_id == current_user.id %>
+
+<ol><%= link_to "Delete", profil_path(profil), method: :delete, data: { confirm: "Are you sure?" }, class: "userbtn",class: "btn btn-default" %></ol>
+
+<%end%>
+<%end%>
+</div>
+<%end%>
+
+
+
+<% if user_signed_in? %> 
+<% if current_user.id == @user.id%>
+
+<ol><%=link_to"Add photo",new_profil_path,class: "btn btn-default" %></ol>
+
+<%end%>
+<%end%>
+
+
+</div>
+</div>
+
+<div class="col-md-3">  
+<div class="panel panel-default">
+
+<ol>
+<h3><%= @user.username.first(10).capitalize%></h3>
+<h4><%= @user.business_type.capitalize%></h4>
+<h5><%= @user.industry.capitalize%> <%="industry"%></h5>
+<h5><%= @user.contry.first(15).capitalize%></h5>
+<h5><%= @user.mobile_number.first(16)%></h5>
+</br>
+</br>
+
+
+</div>
+</div>
+
+
+<div class="col-md-5">
+<div class="panel panel-default">
+
+
+
+
+
+
+<div class="row">
+<div class="col-md-6">
+
+<% if user_signed_in? %> 
+<% if current_user.id == @user.id%>
+
+<%if @user.shops.length == 0%>
+<h5 class="text-center text-info">Add shop Name,</br>People can recognize your Shop.</h5>
+
+<h5 class="text-center"><%=link_to "Add",new_shop_path,class: "my-primary btn-sm"%></h5>
+
+<%end%>
+<%end%>
+<%end%>
+
+<%@user.shops.limit(1).each do|shop|%>
+
+ <ol><h5><b><%=shop.shop_name.first(15).capitalize%></h5>
+ <h6><b><%=shop.market_type%> <%="market"%>
+ .<%=shop.shop_city.capitalize.first(10)%></b></h6>
+<h6>
+<%=shop.description.first(80)%></h6>
+
+
+<% if current_user == shop.user %>
+
+<%= link_to "Delete", shop_path(shop), method: :delete, data: { confirm: "Are you sure?" } %>
+</ol><%end%>
+
+
+<%end%>
+
+</div>
+<div class="col-md-5">
+</br>
+<h2 class="text-center"><%=link_to " Shop ", prod_path(@user.id),class: "my-primary btn-lg"%></h2>
+</div>
+
+</div>
+</br>
+</br>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+
+<div class="col-md-3">
+<% if user_signed_in? %> 
+<% if current_user.id == @user.id%>
+<h3 class="text-center"><%=link_to"Dashboard",profils_path,class: "btn btn-info btn-lg",class: "glyphicon glyphicon-folder-close"%> </h3>
+<%end%>
+<%end%>
+</div>
+
+
+<div class="col-md-6">  
+<div class="addbusiness">
+
+<div class="col-md-12 hidden-sm hidden-xs">  
+<h2 class="text-center">Business/Shop Information</h2>
+</div>
+<% if user_signed_in? %> 
+<% if current_user.id == @user.id%>
+
+
+<%if @user.comps.length == 0%>
+
+</br>
+<h4 class="text-center"><%="Add Business/shop information to unlock the Message option."%></h4>
+<p class="text-center">
+
+<%= link_to"Add Information",new_comp_path,class: "my-primary btn" , :title => "Add Business/shop information unlock the Message option"%></p>
+
+<%end%>
+<%end%>
+<%end%>
+
+</div>
+</div>
+
+
+
+<div class="col-md-3" >
+<div class="usermessage">
+<%@user.comps.limit(1).each do |comp|%>
+<% if user_signed_in? %> 
+<h2 class="text-center">
+<% if current_user.id == @user.id%>
+<b class="text-info"><%=comp.compcms.count%></b>
+<%end%>
+<%=link_to "Message",comp, class: "btn btn-info btn-lg",class: "glyphicon glyphicon-envelope" %></h2>
+
+
+<%end%>
+</div>
+
+
+</div>
+
+</div>
+
+<div class="row">
+<div class="col-md-4 col-md-offset-4 hidden-md hidden-lg hidden-xl">
+<h2 class="text-center">Business/Shop Information</h2>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-default">
+
+<div class="row">
+</br>
+<div class="col-md-5">
+<ol><h5><b>Name</b></h5></ol>
+</div>
+<div class="col-md-7"> 
+<ol><h5><%=comp.company_name.first(25).capitalize%></h5></ol>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="col-md-5">
+<ol><h5><b>Phone Num</b></h5></ol>
+</div>
+<div class="col-md-7">
+<ol><h5><%= comp.company_phone%></h5></ol>
+</div>
+</div>
+ 
+<div class="row">
+<div class="col-md-5">
+<ol><h5><b>year Establishment</b></h5></ol>
+</div>
+<div class="col-md-7">
+<ol><h5><%= comp.year_establishment%></h5></ol>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-5">
+<ol><h5><b>Total Employees</b></h5></ol>
+</div>
+<div class="col-md-7">
+<ol><h5><%= comp.total_employees%></h5></ol>
+</div>
+</div>
+ 
+
+<div class="row">
+<div class="col-md-5">
+<ol><h5><b>Total revenue</b></h5></ol>
+</div>
+<div class="col-md-7">
+<ol><h5><%= comp.total_company_revenue%></h5></ol>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-5">  
+<ol> <h5><b>Total annal revenue</b></h5></ol>
+</div>
+<div class="col-md-7">
+<ol><h5><%= comp.total_annual_revenue%></h5></ol>
+</div>
+</div>
+  
+<div class="row">
+<div class="col-md-5">
+<ol><h5><b>Address</b></h5></ol>
+</div>
+<div class="col-md-7">
+<ol><h5><%=comp.company_address%></h5></ol>
+</div>
+</div>
+
+  
+
+
+ </div>
+ </div>
+
+
+ 
+
+<div class="col-md-6">  
+<div class="panel panel-default">
+</br>
+<ol><b class="text-primary"><%="Gobal : "%> </b></ol>
+
+<div class="row">
+<div class="col-md-5">
+<ol><h5><b>Target Contry</b></h5></ol>
+ </div>
+  <div class="col-md-7">
+<ol><h5><%= comp.target_contry.first(26).capitalize%></h5></ol>
+ </div>
+ </div>
+
+
+
+ <div class="row">
+<div class="col-md-5">
+ <ol><h5><b>OEM/ODM Certification</b></h5></ol>
+ </div>
+  <div class="col-md-7">
+ <ol><h5><%= comp.oem_odm%></h5></ol>
+ </div>
+ </div>
+
+  <div class="row">
+<div class="col-md-5">
+<ol><h5><b>Standard Certification</b></h5></ol>
+ </div>
+  <div class="col-md-7">
+<ol><h5><%= comp.standard_certification.first(26)%></h5></ol>
+  </div>
+ </div>
+
+
+  <div class="row">
+<div class="col-md-5">
+<ol><h5 class="text-primary"><b>company/shop story</b></h5></ol>
+</div>
+</div>
+
+ <div class="row">
+  <div class="col-md-11">
+<ol><h5 ><%= comp.success_failure%></h5></ol>
+  </div>
+ </div>
+
+<ol>
+
+<% if user_signed_in? %>  
+<% if comp.user_id == current_user.id %>
+
+ <%= link_to "Edit", edit_comp_path(comp), class: "btn btn-default" %>
+
+<%= link_to "Delete", comp_path(comp), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+<%end%>
+<%end%>  
+</ol>
+
+ </div>
+ </div>
+ </div>
+
+<div class="row">
+
+<div class="col-md-4 col-md-offset-4">  
+
+<h2 class="text-center">Product Information</h2>
+<% if user_signed_in? %> 
+<% if current_user.id == @user.id%>
+<div class="addproductinfo">
+<p class="text-center"> <%=link_to" Add Product",new_prod_path,class: "btn md-btn"%></p></div>
+
+ 
+<%if @user.prods.length == 0%>
+
+<h4 class="text-center"><%="No Products in your Shop."%></h4>
+<p class="text-center"> <%=link_to" Add Product",new_prod_path,class: "my-primary btn"%></p></div>
+
+<%end%>
+
+<%end%>
+<%end%>  
+</div>
+</div>
+<div class="productbody">
+<% @user.prods.limit(8).in_groups_of(4, false).each do |group| %>
+<div class='row'>
+ <% group.each do |prod|%>
+
+<div class="col-md-3">
+
+<div class="userproduct">
+
+<ol> <%= image_tag prod.pphoto.url(:thumb),:size => "150x150", :crop => :fill%>
+</ol></div>
+ </br>
+<div class="userproductinfo">
+<ol><b>name - </b><%= prod.product_name.capitalize.first(15)%> </br>
+<b>price - </b><%=prod.product_price%></br></ol>
+</div>
+ </br>
+ <span>
+
+<% if user_signed_in? %> 
+ <% if prod.user_id == current_user.id %>
+
+ <ol><%= link_to "Delete", prod_path(prod), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %></ol><%end%><%end%></span>
+
+
+</div>
+
+
+ <%end%>
+ </div>
+ <%end%>
+</div>
+
+
+
+
+</div>
+
+
+

@@ -1,0 +1,67 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+<div class="row">
+
+<div class="col-md-4 col-md-push-6 ">
+<ol><h2>(<%=@shop.shopcms.count%>) Messages</h2>
+</ol>
+
+
+<% @shop.shopcms.each do |comment| %>
+<% if [comment.user, @shop.user].include? current_user %>
+
+
+
+<%= render comment %>
+<%end%>
+<%end%>
+
+</div>
+
+
+
+
+
+
+
+<% unless @shop.user == current_user %>
+<div class="col-md-4 col-md-pull-3">
+<div class="panel panel-default">
+<ol>
+<h3>  Send Message to  <%=@shop.shop_name.capitalize%></h3></ol>
+
+<%= render 'shopcms/form' %>
+
+</div>
+</div>
+<%end%>
+</div>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>

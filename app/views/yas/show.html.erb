@@ -1,0 +1,57 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @ya.user.username.capitalize, profil_path(@ya.user.id) %></h5>
+    <h6><b><%=@ya.user.business_type.capitalize%></b>
+    <%=@ya.user.contry%> . <%=@ya.user.city%></h6>
+      <h6><%= time_ago_in_words(@ya.created_at) %> ago</h6>
+    
+    <div class="aasproductinfo ">
+      <p class="text-secondary"><b>Post Type - </b><%= @ya.post_type %></p>
+    
+        <p class="text-secondary"><b>Market type -</b> <%=@ya.market_type.capitalize%></p>
+      <p class="text-secondary"><b>Name - </b><%= @ya.product_name %></p>
+     </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @ya.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back",yas_path, class: "btn btn-default" %>
+    <% if @ya.user_id == current_user.id %>
+
+   <%= link_to "Delete", ya_path(@ya), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@ya.ycms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @ya.ycms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'ycms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

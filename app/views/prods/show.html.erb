@@ -1,0 +1,280 @@
+
+<div class="shop container-fluid ">
+</br>
+</br>
+
+
+<div class="row">
+<div class="shophead">
+
+<%=image_tag("photos/shophead.png")%>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="shophead2">
+<div class="col-sm-12">
+
+<div class="shophead3">
+<div class="col-sm-5">
+
+
+
+ <%@user.shops.limit(1).each do |shop| %>
+
+ <h5 class="text-left">
+ <b><%=shop.shop_name.capitalize.first(25)%> /
+ <%=shop.market_type.capitalize.first(10)%> <%="market"%> /
+ <%=shop.shop_city.capitalize.first(10)%>.</b></h5>
+ </div>
+<%end%>
+</div>
+
+
+
+<div class="col-sm-5">
+
+<% if user_signed_in? %> 
+<% if current_user.id == @user.id %>
+
+<%=link_to"Add product",new_prod_path,class: "btn btn-primary btn-sm"%>
+
+<%=link_to"Add shop name ",new_shop_path,class: "btn btn-primary btn-sm"%>
+
+<%=link_to"Add Offer ",new_zza_path,class: "btn btn-primary btn-sm"%>
+<%end%>
+<%end%>
+</div>
+
+
+
+<div class="shophead4">
+<div class="col-sm-2">
+<%@user.shops.limit(1).each do |shop|%>
+<h3 class="text-center">
+<% if user_signed_in? %>
+<% if current_user.id == @user.id%>
+<b class="text-info"><%=shop.shopcms.count%></b><%end%> 
+<%=link_to "Message",shop, class: "btn btn-info btn-lg",class: "glyphicon glyphicon-envelope" %></h3>
+<%end%>
+<%end%>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+ <div class="allshopphoto">
+
+<%if @user.prods.length == 0%>
+
+
+<% if user_signed_in? %> 
+<% if current_user.id == @user.id %>
+ <div class="col-md-2 col-md-offset-3">
+ </br>
+ <div class="allshopdata1">
+ 
+<div class="text-center">
+<span class="text-info glyphicon glyphicon-hand-up"></span>
+</div>
+<h4 class="text-center">Add a product to your Shop.</h4>
+</br>
+</div>
+</div>
+
+
+ <div class="col-md-3">
+ </br>
+  <div class="allshopdata1">
+  
+<div class="text-center">
+<span class=" text-info glyphicon glyphicon-hand-up"></span>
+</div>
+<h4 class="text-center">Add Shop Name.</br> People can recognize your Shop.</h4>
+
+</br>
+ </div>
+</div>
+
+
+
+
+ <div class="col-md-2">
+ </br>
+  <div class="allshopdata1">
+
+ <div class="text-center">
+ <span class="text-info glyphicon glyphicon-hand-up"></span>
+ </div>
+ <h4 class="text-center">Add Shop offer.</h4>
+ </br>
+ </br>
+ </div>
+</div>
+
+
+<%end%>
+<%end%>
+<div class="col-md-2">
+ <div class="allshopdata2 ">
+
+ <h4 class="text-center rounded">Shop empty</h4>
+</div>
+<%= image_tag("photos/shopspace1.png",width: "25px")%>
+  
+</div>
+
+
+
+<%end%>
+
+
+<% @user.prods.limit(8).each do |prod|%>
+ <div class="col-md-3">
+<div class="allshopphotoin">
+
+<%= image_tag prod.pphoto.url(:medium )%>
+<div class="allshopdata">
+<h5 class="text-light bg-dark text-center">&nbsp;&nbsp;<%= prod.product_name%>&nbsp; /
+<%= prod.product_price%></h5>
+</div>
+
+
+
+</div>
+</div>
+
+<%end%>
+</div>
+
+
+
+
+<div class="row">
+<div class="shopbaner">
+<%=image_tag("photos/shopend.png")%>
+</div>
+
+
+
+</div>
+
+
+<div class="row">
+<div class=" col-md-12  bs-linebreak"> 
+
+
+<h5 class="text-center"><% @user.shops.limit(1).each do |shop|%>
+<%if shop.website_link.length == 0%>
+
+<%else%>
+
+  <%=link_to shop.website_link,"http://#{shop.website_link}",class: "my-primary btn-sm"%></h5>
+<%end%>
+<%end%>
+<div class="allshopdata">
+<div class='table-responsive'>
+        <table class="table", style= "" border="1">
+      <thead>
+        <tr>
+
+
+<th><h5 class="text-center text-primary"><b><%="User"%></b></h5></th>
+
+<th> <h5 class="text-center text-primary"><b><%="Shop Name"%></b></h5></th>
+ <th><h5 class="text-center text-primary"><b><%="Day Open"%></b></h5></th>
+<th><h5 class="text-center text-primary"><b><%="Shop Timing "%></b></h5></th>
+
+<th><h5 class="text-center text-primary"><b><%="Min Order"%></b></h5></th>
+ <th><h5 class="text-center text-primary"><b><%="Supply Ability"%></b></h5></th>
+<th><h5 class="text-center text-primary"><b><%="Delivery Time"%></b></h5></th>
+ <th><h5 class="text-center text-primary"><b><%="Transportation"%></b></h5></th>
+
+<th><h5 class="text-center text-primary"><b><%="Shop Industry"%></b></h5></th>
+
+ <th><h5 class="text-center text-primary"><b><%="Shop Description"%></b></h5></th>
+
+ </tr>
+      </thead>
+
+ <tbody>
+        <tr>        
+
+ <%@user.shops.limit(1).each do |shop| %>
+
+
+ <td style="word-wrap: break-word"><h5><%=link_to shop.user.username.first(15).capitalize, profil_path(shop.user.id),class: "text-danger"%>  </h5>
+<h6><%=shop.user.business_type.capitalize%></h6>
+<h6><%=shop.shop_country%></h6></td>
+
+
+<td style="word-wrap: break-word"><h6><%=shop.shop_name.capitalize.first(26) %></h6>
+<h6><%=shop.shop_country.capitalize.first(12)%>/<%=shop.shop_city.capitalize.first(12)%></h6>
+</td>
+
+<td style="word-wrap: break-word"><h6>
+<%= shop.monday%><%= shop.tuesday%></h6>
+<h6><%= shop.wednesday%>.
+<%= shop.thursday%></h6>
+<h6><%= shop.friday%>.<%= shop.saturday%>.<%= shop.sunday%></h6> </td>
+
+<h6><td style="word-wrap: break-word"><%=shop.timeing%></td></h6>
+
+<td style="word-wrap: break-word"><h6 ><%= shop.min_order%> </h6></td>
+<td style="word-wrap: break-word"><h6 ><%= shop.supply_ability%> </h6></td>
+<td style="word-wrap: break-word"><h6 ><%= shop.delivery_time%> </h6></td>
+<td style="word-wrap: break-word"><h6><%= shop.transportation%> </h6></td>
+ 
+
+
+
+
+
+
+<td>
+<h6><%=shop.user.industry%></h6></td>
+<td style="word-wrap: break-word">
+<h6>
+ <div class="col-sm-10">
+<%= shop.description.capitalize %></h6></td>
+</div>
+<% end %>
+ </tbody>
+        </tr>  
+    </table>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<div class=" col-md-8 col-md-offset-2"> 
+<div class="shopoffer">
+
+<%@user.zzas.each do |offer|%>
+
+<h5 class="text-center text-primary"><b>Offer</b></h5>
+
+<h5 class="text-center"><%=offer.shop_name.capitalize%></h5>
+<h5 class="text-center"><%=offer.offer.capitalize%></h5>
+<h5 class="text-center"><%=offer.offerdaystart%></h5>
+
+<% if user_signed_in? %> 
+<% if offer.user_id == current_user.id %>
+<h6 class="text-center"><%= link_to "Edit", edit_zza_path(offer) %>
+<%= link_to "Delete", zza_path(offer), method: :delete, data: { confirm: "Are you sure?" } %>
+</h6>
+<%end%>
+<%end%>
+<%end%>
+</div>
+</div>
+
+</div>

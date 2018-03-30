@@ -1,0 +1,2 @@
+module GcmsHelper
+end

@@ -1,0 +1,16 @@
+
+  <div class="panel panel-default">
+<ol>
+</br>
+
+
+
+<h5><%=link_to compcm.user.username,profil_path(compcm.user.id).capitalize%></h5> 
+ <h6><b><%=compcm.user.business_type.capitalize %></b>
+   <%=compcm.user.contry%></h6></br> 
+   <p><%= compcm.content %></p>
+ 
+                          
+<%= link_to "Delete", comp_compcm_path(compcm.comp, compcm), method: :delete, data: { confirm: "Are you sure?",class: "btn btn-default" } %>
+</div>
+

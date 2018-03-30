@@ -1,0 +1,59 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @la.user.username.capitalize, profil_path(@la.user.id) %></h5>
+    <h6><b><%=@la.user.business_type.capitalize%> / </b>
+    <%=@la.user.contry%> . <%=@la.user.city%></h6>
+      <h6><%= time_ago_in_words(@la.created_at) %> ago</h6>
+
+ 
+    
+    <div class="aasproductinfo ">
+     <p class="text-secondary"><b>Post Type - </b><%= @la.post_type %></p>
+ 
+      <p class="text-secondary"><b>Market type -</b> <%=@la.market_type.capitalize%></p>
+    <p class="text-secondary"><b>Name - </b><%= @la.product_name %></p>   
+    </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @la.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back", las_path, class: "btn btn-default" %>
+    <% if @la.user_id == current_user.id %>
+
+   <%= link_to "Delete", la_path(@la), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@la.lcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @la.lcms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'lcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

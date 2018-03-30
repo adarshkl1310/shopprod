@@ -1,0 +1,114 @@
+// Place all the styles related to the Prods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.allshopphotoin img{
+  display:flex;
+  flex-wrap:wrap;
+
+ }
+
+
+
+.col-md-3 .allshopfrontimg img{ width:100%;
+
+}
+
+
+
+  
+.allshopphoto .col-md-3 img{
+  width:100%;
+ margin: auto;
+position: relative;
+top:10px;
+}
+
+.shophead4 .col-sm-2{
+position: relative;
+bottom:14px;}
+
+.shophead3{color:rgb(99, 158, 255);}
+
+
+.shophead2{width:100%;
+background-color:rgb(0, 0,1);
+position: relative;
+top:4px;
+               margin: 0;
+            padding: 0;}
+
+.shophead img{width:100%;
+position: relative;
+top:13px;
+               margin: 0;
+            padding: 0;}
+
+.shopoffer{ background-color:rgb(0, 0,1); 
+ color:rgb(130, 137, 183);}
+
+.con .shophead{    
+    position: relative;
+    right:15px;
+    width:100px;
+        top:0px;}
+
+
+  .shopbaner img{ position:relative;
+    left:2px;
+
+    width:100%;
+    }
+
+.addshopnameaddproduct{position: relative;
+    left:530px;
+    bottom:10px;
+  
+}
+
+
+.allshopdata{ background-color:rgb(0, 0,1);
+               color:rgb(255, 255, 255);
+               position: relative;
+top:8px;}
+
+
+.allshopdata1{ color:rgb(0, 0, 0) ;
+  background-color:rgb(199, 218, 232);}
+
+.allshopdata2{color:rgb(0, 0, 0) ;
+  background-color:rgb(199, 218, 232);
+  border-radius: 65px;}
+
+
+
+    .usershopdatainbody{position: relative;
+    left:20px;
+    width: 11em}
+
+
+.shopsearch{position: relative;
+    left:15px;}
+
+.shopsdata{position: relative;
+    left:112px;
+    }
+
+.allshopsdata{ width: 36em;
+  word-wrap: break-word;
+}
+
+.shopdatain{position:relative;
+    left:212px;
+    top:20px;}
+
+
+.shopview{position:relative;
+                 top:-15px;
+                 left:60px;}
+                 .usershopdatahead{position:relative;
+                 bottom:15px;}
+
+ .col-md-10 { overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;}

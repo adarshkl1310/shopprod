@@ -1,0 +1,2 @@
+module EasHelper
+end

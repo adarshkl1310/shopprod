@@ -1,0 +1,73 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @buysel.user.username.first(30).capitalize, profil_path(@buysel.user.id) %></h5>
+    <h6><b><%=@buysel.user.business_type.capitalize%></b>
+    <%=@buysel.user.contry.first(20)%></h6>
+    <h6><%= time_ago_in_words(@buysel.created_at) %> ago</h6>
+
+    <%= image_tag @buysel.hphoto.url(:medium),:size => "220x220", :crop => :fill%>
+    </br>
+</br>
+</br>
+</br>
+    <div class="description">
+     <p class="text-secondary"><b>Post Type - </b><%= @buysel.post_type %></p>
+   
+      <p class="text-secondary"><b>Market type -</b> <%=@buysel.market_type.capitalize%></p>
+  <p class="text-secondary"><b>Name - </b><%= @buysel.product_name %></p>
+   <p class="text-secondary"> <%= @buysel.description%></p>
+    </div>
+                 
+   <div class="links btn-group">
+ 
+   <%= link_to "Back", buysels_path, class: "btn btn-default" %>
+<% if current_user == @buysel.user %>
+
+ <%= link_to "Delete", buysel_path(@buysel), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"%>
+    <%end%>
+   </div>
+   </div>
+
+   </div>
+</div>
+
+
+ <div class="col-md-9 col-md-offset-1">
+ <h4>(<%=@buysel.buyselcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+ <p><%= render @buysel.buyselcms %></p>
+ </div>
+ </div>
+</div>
+
+
+
+<% if user_signed_in? %>
+<div class="col-md-8 col-md-offset-1">
+    <div class="panel-body">
+    
+ <%= render 'buyselcms/form' %>
+ </div>
+ </div>
+  <%else %>
+  <ol>
+   <div class="col-md-5 col-md-offset-1">
+  <p class=" text-center text-info">Sign Up or Sign In to add a Comment
+  <%=link_to"join us free",new_user_session_path,class: "btn btn-info btn-sm" %></p>
+</div>
+<% end %>
+ 
+
+
+
+</div>

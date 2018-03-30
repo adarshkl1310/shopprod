@@ -1,0 +1,141 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+  
+  
+    <div class="col-md-6 col-md-offset-3">
+
+    
+    <div class="panel panel-default">
+   
+
+<ol>
+<h3>Edit profile</h3>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+
+  <div class="field"> 
+    <b><%= f.label :contry,"Country" %> : </b><br />
+    <%= f.text_field :contry,:size=>"55", placeholder: "Your Region", :maxlength=>"20",class: "form-control"  %>
+  </div></br>
+
+   <div class="field">
+    <b><%= f.label :city %> : </b> <br />
+    <%= f.text_field :city,:size=>"55",:maxlength=>"20" ,class: "form-control"%>
+  </div>
+
+  </br>
+
+  <div class="field">
+    <b><%= f.label :business_type,"Business Type" %> : </b> <br />
+    <%= f.select :business_type,[["Select One", " "],
+['Retail store'], 
+['Street Shop'], 
+['Exporter/Importer'], 
+['Manufacturer'], 
+['Freelancer'], 
+['Home shop'], 
+['Wholesaler/Distributor'], 
+['Service'], 
+['Supplier'], 
+['Trading Company'], 
+['VAR/system Integrator'], 
+['Education service business'], 
+['Health care business'], 
+['Food business'], 
+['Hotel/Touism/Paying guest'], 
+['New Shopprod shop'], 
+['orther.']],{},class: "form form-group form-control"%>
+    </div></br>
+
+
+   
+  <div class="field">
+
+   <b> <%= f.label :Industry_Type %> : </b><br />
+    <%= f.select :industry,[["Select One", " "],
+['Agriculture,Animal,Food & Beverages'], 
+['Apparel, Textile & Leather'], 
+['Fashion Accessories & wear'],
+['Cosmetic & Beauty'], 
+['Sports & Fitness'], 
+['Automobiles & Transportations'], 
+['Computer & Telecommunication'], 
+['Electronics'], 
+['Electrical'], 
+['Buildings & Construction'], 
+['School, College & University'],
+['Hospital & Medical'], 
+['Household & Kitchen'], 
+['Machinery & Industrial parts'],
+['Valuable Jewelry, Gem & Metal'], 
+['Bags, Rubber & Plastics'], 
+['Energy, Environments & Power'], 
+['Paper & Packing material'], 
+['Printing, publishing & Hardware'],
+['Security, Alarm & Safety'], 
+['Laboratory & Measuring instruments'], 
+['Pipes, Tubes & Fitting'], 
+['Handicrafts, Toys, Gifts & Crafts'], 
+['Furniture & Furnishings'], 
+['Games, Movies & Entertainment'], 
+['Business services & Freelancer']],{},class: "form form-group form-control"%>
+  </div></br>
+
+   <div class="field">
+    <b><%= f.label :Mobile_Number %> : </b><br />
+    <%= f.text_field :mobile_number,:size=>"55",:maxlength=>"30",class: "form-control" %>
+  </div></br>
+ 
+
+  <div class="field">
+   <b> <%= f.label :email %> : </b><br />
+    <%= f.email_field :email, autofocus: true,:size=>"55",:maxlength=>"50",class: "form-control"   %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+</br>
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off",:size=>"55",:maxlength=>"50" ,class: "form-control"   %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div></br>
+
+  <div class="field">
+    <b><%= f.label :password_confirmation %> : </b><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off",:size=>"55",:maxlength=>"50" ,class: "form-control"   %>
+  </div></br>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off",:size=>"55",:maxlength=>"50",class: "form-control"    %>
+  </div></br>
+
+  <div class="actions">
+    <%= f.submit "Update",class: "btn btn-md" %>
+  </div>
+<% end %>
+</br>
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back",buysels_path %>
+</ol>
+
+</div>
+</br>
+</br>
+</br>
+</br>
+</div>
+
+</div>

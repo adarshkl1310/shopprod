@@ -1,0 +1,26 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+<div class="row">
+<div class="col-md-5 col-md-offset-1"> 
+<%= render 'search2' %>
+</div>
+
+
+
+<div class="col-md-8 col-md-offset-1">	
+<h3 class="new-user-header">users</h3>
+<div class="panel-group">
+  <%@users.each do|user|%>
+   <div class="panel panel-default">
+<ol><h5><%=link_to user.username.first(20).capitalize, profil_path(user.id)%></h5>
+<p class="text-muted"><b><%=user.business_type.capitalize%> . </b><%=user.contry.first(11) %></p>
+<%=user.industry.capitalize %> </ol>
+</div>
+<%end%>
+</div>
+</div>
+
+
+</div>

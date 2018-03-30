@@ -1,0 +1,65 @@
+
+
+<div class="container"> </br>
+<%=simple_form_for @buysel, url: buysels_path, html: { multipart: true } do |f| %>
+
+
+ <div class="row">
+
+
+  
+  <div class="col-sm-4">
+<b><%= f.text_field :product_name,:maxlength=>"320",:size=>"30px",placeholder:'Prod or biz Name' ,class: "form-control"%>
+</b>
+</div>
+
+
+<div class="col-sm-6 ">
+<div class="formmarkettype">
+<%= f.label :Post_type%>&nbsp;-&nbsp;
+<%= f.radio_button :post_type,'Buy'%>Buy&nbsp;
+<%= f.radio_button :post_type,'Sell'%>Sell&nbsp;
+<%= f.radio_button :post_type,'Ask?'%>Ask?&nbsp;
+<%= f.radio_button :post_type,"Share"%>Share
+</br>
+</br>
+</div>
+</div>
+
+
+</div>
+<div class="row">
+<div class="col-sm-9">
+
+<%= f.label :market_type,"Market type"%>&nbsp;-&nbsp;
+<%= f.radio_button :market_type,'local'%>Local&nbsp;
+<%= f.radio_button :market_type,'state'%>State&nbsp;
+<%= f.radio_button :market_type,'country'%>Country&nbsp;
+<%= f.radio_button :market_type,'global'%>Global</br>
+</div>
+</div>
+</br>
+
+<div class="form-group">
+<div class="row">
+ 
+ <div class="col-sm-6 ">
+<b><%= f.text_area :description,:maxlength=>"1000",:size=>"50px",placeholder: 'Prod or biz Description',class: "form-control" %></b>
+</div>
+</div>
+</div>
+
+ <div class="form-group">
+ 
+<%= f.label :Add_image%>
+<%= f.file_field :hphoto%> </br>
+
+<%= f.submit"Publish", :title => "Name,Post,market type,Description can't be blank", :rel => 'tooltip',class: "btn btn-md"%>
+
+</div>
+<%end%>
+<p><small>Name,Post,Market Type,Description can't be blank</small></p>
+</div>
+
+
+

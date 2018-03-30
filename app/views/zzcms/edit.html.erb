@@ -1,0 +1,31 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+<ol>
+
+<div class="col-md-9 col-md-offset-1">	
+<div class="panel panel-default">
+
+<div class="editreplay">
+<h1>Edit Comment</h1>
+</div>
+
+<%=simple_form_for([@zza, @zzcm]) do |f| %>
+     <div class="panel-heading">
+	<%= f.input :content, label: ".",:input_html => {:rows => 13,:cols => 105}   %>
+	<%= f.button :submit %>
+	</div>
+<% end %>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>
+</ol>
+
+<div>

@@ -1,0 +1,19 @@
+  <div class="panel panel-default">
+    
+<div class="buyselcomment">
+<h3>Add a Comment</h3>
+
+ <div class="panel-heading">
+<%=simple_form_for([@fa,@fa.fcms.build]) do |f| %>
+  <div class="col-sm-12">
+	<%= f.text_area :content,:maxlength=>"6000", label: ".",:rows => 6,:cols => 75,class: "form-control" %>
+	</br>
+	</div>
+
+<%= f.submit"Add Comment", :title => "content can't be blank", :rel => 'tooltip',class: "btn btn-md"%>
+	</div>
+
+<% end %>
+
+</div>
+</div>

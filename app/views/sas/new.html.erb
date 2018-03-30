@@ -1,0 +1,23 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+<div class="col-md-8 col-md-offset-1">	
+<ol><h4><%="Printing, publishing & Hardware group"%></h4>
+<h4 class="new-user-header">users</h4></ol>
+<div class="panel-group">
+<%@users.each do |i|%>
+
+<div class="panel panel-default">
+<ol>
+<%=link_to i.username.capitalize.first(20),profil_path(i.id)%>
+<p class="text-muted"><b><%=i.business_type.capitalize%> . </b><%=i.contry.capitalize.first(15) %></p>
+</ol>
+</div>
+<%end%>
+</div>
+</div>
+
+
+
+</div>

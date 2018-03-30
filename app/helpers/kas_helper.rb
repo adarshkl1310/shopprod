@@ -1,0 +1,2 @@
+module KasHelper
+end

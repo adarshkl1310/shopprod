@@ -1,0 +1,88 @@
+<div class="body container-fluid">
+</br>
+<p>
+<%= link_to 'Back',new_search_path%></p>
+</br>
+</br>
+</br>
+</br>
+<%if @search.search_shops.empty?%>
+
+<p>No shop found  </p>
+<%else%>
+
+
+ <div class="row">  
+<div class="col-md-7">
+<%@search.search_shops.each do |shop| %>
+<div class="col-md-12">
+<div class="panel panel-default">
+
+<div class="row">
+<div class="col-md-3">
+
+
+
+<ol></br>
+<b><%=shop.shop_name.capitalize.first(13) %></b>
+</br></br>
+
+
+<%if shop.sphoto.present?%>
+<%= image_tag shop.sphoto.url(:thumb),width:"140px",hight:"100px", class: "img-responsive"%>
+<%else%>
+<%=image_tag("photos/shoppage.png",width: "150px")%>
+<%end%>
+
+</ol>
+
+
+</div>
+
+
+
+<div class="col-md-7 col-md-offset-1">
+</br>
+
+<ol><h5><%=link_to shop.user.username.capitalize, profil_path(shop.user.id)%> </h5>
+<h5><b><%=shop.user.business_type.capitalize%> / </b>
+<%=shop.shop_country.capitalize%><b> . </b><%=shop.shop_city.capitalize%></h5>
+<h6><%= time_ago_in_words(shop.created_at) %> ago</h6>
+<h5><b>Shop Name - </b><%=shop.shop_name%></h5>
+<h5><b>Shop Market type - </b><%=shop.market_type%></h5>
+<p class="text-muted"><%= shop.description.first(110) %> </p>
+</ol>
+
+</div>
+</div>
+
+<div class="shopview">
+<%= link_to "View shop",prod_path(shop.user.id),class: "btn btn-default btn-md" %>
+<% if user_signed_in? %> 
+<% if shop.user_id == current_user.id %>
+<h6>
+<%= link_to "Delete", shop_path(shop), method: :delete, data: { confirm: "Are you sure?" } %>
+</h6>
+<%end%>
+<%end%>
+</div>
+</div>
+</div>
+<%end%>
+<%end%>
+
+
+
+</div>
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+</div>

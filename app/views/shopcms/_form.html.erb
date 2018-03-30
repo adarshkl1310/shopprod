@@ -1,0 +1,6 @@
+</br>
+<ol><%=simple_form_for([@shop,@shop.shopcms.build]) do |f| %>
+	<%= f.input :content,:maxlength=>"220",label: "."%></br>
+	<%= f.button :submit,"Send Message",:class => 'btn-custom' %>
+<% end %></ol>
+

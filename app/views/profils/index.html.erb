@@ -1,0 +1,695 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+
+<div class="row">
+<div class="col-md-3">	
+
+
+
+<h3 class="text-center text-info"><b><%="posts"%></b></h3>
+
+
+
+<% current_user.buysels.each do |buysel| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=buysel.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=buysel.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=buysel.product_name.first(50)%></p>
+<p class="text-muted"><%= buysel.description.first(100) %> </p>
+<%=link_to"view",buysel,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+
+
+<% current_user.aas.each do |aa| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=aa.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=aa.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=aa.product_name.first(50)%></p>
+<p class="text-muted"><%=aa.description.first(100) %> </p>
+<%=link_to"view",aa,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.bas.each do |bb| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=bb.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=bb.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=bb.product_name.first(50)%></p>
+<p class="text-muted"><%=bb.description.first(100) %> </p>
+<%=link_to"view",bb,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.cas.each do |cc| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=cc.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=cc.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=cc.product_name.first(50)%></p>
+<p class="text-muted"><%=cc.description.first(100) %> </p>
+<%=link_to"view",cc,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.das.each do |dd| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=dd.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=dd.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=dd.product_name.first(50)%></p>
+<p class="text-muted"><%=dd.description.first(100) %> </p>
+<%=link_to"view",dd,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.eas.each do |ee| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=ee.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=ee.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=ee.product_name.first(50)%></p>
+<p class="text-muted"><%=ee.description.first(100) %> </p>
+<%=link_to"view",ee,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.fas.each do |ff| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=ff.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=ff.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=ff.product_name.first(50)%></p>
+<p class="text-muted"><%=ff.description.first(100) %> </p>
+<%=link_to"view",ff,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.gas.each do |gg| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=gg.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=gg.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=gg.product_name.first(50)%></p>
+<p class="text-muted"><%=gg.description.first(100) %> </p>
+<%=link_to"view",gg,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.has.each do |hh| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=hh.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=hh.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=hh.product_name.first(50)%></p>
+<p class="text-muted"><%=hh.description.first(100) %> </p>
+<%=link_to"view",hh,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.iis.each do |ii| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=ii.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=ii.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=ii.product_name.first(50)%></p>
+<p class="text-muted"><%=ii.description.first(100) %> </p>
+<%=link_to"view",ii,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.jas.each do |jj| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=jj.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=jj.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=jj.product_name.first(50)%></p>
+<p class="text-muted"><%=jj.description.first(100) %> </p>
+<%=link_to"view",jj,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.kas.each do |kk| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=kk.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=kk.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=kk.product_name.first(50)%></p>
+<p class="text-muted"><%=kk.description.first(100) %> </p>
+<%=link_to"view",kk,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.las.each do |ll| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=ll.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=ll.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=ll.product_name.first(50)%></p>
+<p class="text-muted"><%=ll.description.first(100) %> </p>
+<%=link_to"view",ll,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.mas.each do |mm| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=mm.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=mm.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=mm.product_name.first(50)%></p>
+<p class="text-muted"><%=mm.description.first(100) %> </p>
+<%=link_to"view",mm,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.nas.each do |nn| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=nn.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=nn.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=nn.product_name.first(50)%></p>
+<p class="text-muted"><%=nn.description.first(100) %> </p>
+<%=link_to"view",nn,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.oas.each do |oo| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=oo.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=oo.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=oo.product_name.first(50)%></p>
+<p class="text-muted"><%=oo.description.first(100) %> </p>
+<%=link_to"view",oo,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.pas.each do |pp| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=pp.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=pp.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=pp.product_name.first(50)%></p>
+<p class="text-muted"><%=pp.description.first(100) %> </p>
+<%=link_to"view",pp,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.qas.each do |qq| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=qq.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=qq.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=qq.product_name.first(50)%></p>
+<p class="text-muted"><%=qq.description.first(100) %> </p>
+<%=link_to"view",qq,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.ras.each do |rr| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=rr.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=rr.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=rr.product_name.first(50)%></p>
+<p class="text-muted"><%=rr.description.first(100) %> </p>
+<%=link_to"view",rr,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.mas.each do |mm| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=mm.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=mm.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=mm.product_name.first(50)%></p>
+<p class="text-muted"><%=mm.description.first(100) %> </p>
+<%=link_to"view",mm,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.nas.each do |nn| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=nn.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=nn.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=nn.product_name.first(50)%></p>
+<p class="text-muted"><%=nn.description.first(100) %> </p>
+<%=link_to"view",nn,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.oas.each do |oo| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=oo.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=oo.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=oo.product_name.first(50)%></p>
+<p class="text-muted"><%=oo.description.first(100) %> </p>
+<%=link_to"view",oo,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.pas.each do |pp| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=pp.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=pp.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=pp.product_name.first(50)%></p>
+<p class="text-muted"><%=pp.description.first(100) %> </p>
+<%=link_to"view",pp,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.qas.each do |qq| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=qq.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=qq.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=qq.product_name.first(50)%></p>
+<p class="text-muted"><%=qq.description.first(100) %> </p>
+<%=link_to"view",qq,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.ras.each do |rr| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=rr.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=rr.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=rr.product_name.first(50)%></p>
+<p class="text-muted"><%=rr.description.first(100) %> </p>
+<%=link_to"view",rr,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.sas.each do |ss| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=ss.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=ss.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=ss.product_name.first(50)%></p>
+<p class="text-muted"><%=ss.description.first(100) %> </p>
+<%=link_to"view",ss,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.tts.each do |tt| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=tt.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=tt.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=tt.product_name.first(50)%></p>
+<p class="text-muted"><%=tt.description.first(100) %> </p>
+<%=link_to"view",tt,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.uas.each do |uu| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=uu.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=uu.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=uu.product_name.first(50)%></p>
+<p class="text-muted"><%=uu.description.first(100) %> </p>
+<%=link_to"view",uu,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.vas.each do |vv| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=vv.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=vv.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=vv.product_name.first(50)%></p>
+<p class="text-muted"><%=vv.description.first(100) %> </p>
+<%=link_to"view",vv,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.was.each do |ww| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=ww.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=ww.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=ww.product_name.first(50)%></p>
+<p class="text-muted"><%=ww.description.first(100) %> </p>
+<%=link_to"view",ww,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.xas.each do |xx| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=xx.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=xx.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=xx.product_name.first(50)%></p>
+<p class="text-muted"><%=xx.description.first(100) %> </p>
+<%=link_to"view",xx,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.yas.each do |yy| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=yy.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=yy.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=yy.product_name.first(50)%></p>
+<p class="text-muted"><%=yy.description.first(100) %> </p>
+<%=link_to"view",yy,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+<% current_user.zas.each do |zz| %>
+<div class="panel panel-default">
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=zz.post_type%></p>
+<p class="text-secondary"><b>Market type - </b><%=zz.market_type.capitalize%></p>
+<p class="text-secondar"><b>Prod&nbsp;/&nbsp;? - </b><%=zz.product_name.first(50)%></p>
+<p class="text-muted"><%=zz.description.first(100) %> </p>
+<%=link_to"view",zz,class: "btn btn-default"%>
+</ol>
+</div>
+<% end %>
+
+</ol>
+
+</div>
+
+
+
+
+
+
+
+<div class="col-md-3">	
+
+
+<h3 class="text-center text-info"><b><%="comments"%></b></h3>
+
+
+<%current_user.buyselcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.buysel %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.acms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.aa %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.bcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ba %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.ccms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ca %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.dcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.da %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.ecms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ea %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.fcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.fa %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.gcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ga %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.hcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ha %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.icms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ii %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.jcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ja %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.kcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ka %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.lcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.la %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.mcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ma %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.ncms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.na %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.ocms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.oa %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.pcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.pa %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.qcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.qa %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.rcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ra %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.scms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.sa %></p>
+</ol>
+</div>
+<% end %>
+
+
+<%current_user.tcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.tt %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.ucms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ua %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.vcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.va %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.wcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.wa %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.xcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.xa %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.ycms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.ya %></p>
+</ol>
+</div>
+<% end %>
+
+<%current_user.zcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.za %></p>
+</ol>
+</div>
+<% end %>
+
+</ol>
+
+</div>
+
+
+<div class="col-md-6">	
+
+
+<h3 class="text-center text-info"><b><%="Messages"%></b></h3>
+
+<div class="row">
+<div class="col-md-6">	
+
+<h4 class="text-center"><%="Shop Messages"%></h4>
+
+<%current_user.shopcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.shop %></p>
+</ol>
+</div>
+<% end %>
+
+</div>
+
+<div class="col-md-6">
+
+<h4 class="text-center"><%="User Messages"%></h4>
+
+<%current_user.compcms.each do |comment| %>
+<div class="panel panel-default">
+</br>
+<ol><p><%=link_to comment.content.first(50),comment.comp %></p>
+</ol>
+</div>
+<% end %>
+
+
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+
+</div>

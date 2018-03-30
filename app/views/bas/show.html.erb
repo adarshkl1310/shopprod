@@ -1,0 +1,60 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @ba.user.username.capitalize, profil_path(@ba.user.id) %></h5>
+    <h6><b><%=@ba.user.business_type.capitalize%> / </b>
+    <%=@ba.user.contry%> . <%=@ba.user.city%></h6>
+     <h6><%= time_ago_in_words(@ba.created_at) %> ago</h6>
+
+ 
+    
+    <div class="aasproductinfo ">
+     <p class="text-secondary"><b>Post Type - </b><%= @ba.post_type %></p>
+   
+   <p class="text-secondary"><b>Market type -</b> <%=@ba.market_type.capitalize%></p>
+   <p class="text-secondary"><b> Name - </b><%= @ba.product_name %>
+    </p>
+    </div>
+
+    <div class="aasdescription">
+     <p class="text-secondary"> <%= @ba.description %></p>
+    </div>
+   <div class="links btn-group">
+   <%= link_to "Back", bas_path, class: "btn btn-default" %>
+   <% if @ba.user_id == current_user.id %>
+   <%= link_to "Delete", ba_path(@ba), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
+   <%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+ <h4>(<%=@ba.bcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @ba.bcms %></p>
+ </div>
+ </div>
+
+    <div class="panel-body">
+ <%= render 'bcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

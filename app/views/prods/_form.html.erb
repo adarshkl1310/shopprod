@@ -1,0 +1,38 @@
+
+
+
+
+
+<div class="panel panel-default">
+
+ <div class="row">
+<div class="col-md-10">
+</br>
+</br>
+
+<ol><%= simple_form_for @prod, url: prods_path,html: { multipart: true } do |f| %>
+
+
+
+<b><%= f.label :product_name,'Product Name'%></b> <small class="text-info">(required)</small> :
+<%= f.text_field :product_name,:size=>"55", :maxlength=>"20",class: "form-control" %></br>
+
+<b><%= f.label :Price,'Price'%></b> <small class="text-info">(required)</small> :
+<%= f.text_field :product_price,:maxlength=>"20",class: "form-control" %></br>
+
+
+<b><%= f.label :Product_Photo%></b> <small class="text-info">(required)</small> :
+<%= f.file_field :pphoto%></br></br>
+
+
+<%= f.submit"Add Product",:title => "Product Name,Price,Product Photo can't be blank", :rel => 'tooltip',class: "my-primary btn"%>
+
+
+</br>
+</br>
+<%end%>
+<%="8 product photos limited."%>
+</ol>
+</div>
+</div>
+</div>

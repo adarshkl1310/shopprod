@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trade</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  
+   <body container-fluid>
+    
+
+<%= render '/layouts/nav' %>
+
+
+
+    <span class="notice"><%= yield %></span>
+    <span class="notice"><%= notice %></span>
+    <span class="alert"><%= alert %></span>
+
+
+ 
+    
+</body>
+</html>

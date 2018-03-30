@@ -1,0 +1,137 @@
+<div class="body container-fluid">
+
+</br>
+</br>
+</br>
+<% if user_signed_in? %>
+
+  <%else%>
+
+<div class="col-md-7">
+<div class="panel-heading">
+  <b><p class="text-left text-info">Sign Up or Sign In to a create your own free Shop</b>
+  <%=link_to"join us",new_user_session_path,class: "btn btn-info btn-md" %> </p>              
+</div>
+</div>
+<% end %>
+        
+ <div class="row">      
+<div class="col-md-7">
+
+<div class="shopsearch">
+ <%= render 'search' %>
+ <b><%=link_to"Search filter options",new_search_path%></b>
+ </div>
+</div>
+ </br>
+
+
+  
+<div class="col-md-3 col-md-offset-1">
+<div class="panel panel-default">
+<ol><h5><b>Offers</b></h5>
+<%=link_to "view all offer",zzas_path %>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+
+ <div class="row">  
+<div class="col-md-7">
+<%@shop.each do |shop| %>
+<div class="col-md-12">
+<div class="panel panel-default">
+
+<div class="row">
+<div class="col-md-3">
+
+
+
+<ol></br>
+<b><%=shop.shop_name.capitalize.first(20) %></b>
+</br></br>
+
+
+<%if shop.sphoto.present?%>
+<%= image_tag shop.sphoto.url(:thumb),:size => "150x150", :crop => :fill%>
+<%else%>
+<%=image_tag("photos/shoppage.png",width: "150px")%>
+<%end%>
+</ol>
+
+
+</div>
+
+
+
+<div class="col-md-7 col-md-offset-1">
+</br>
+</br>
+<ol><h5><%=link_to shop.user.username.capitalize, profil_path(shop.user.id)%> </h5>
+<h5><b><%=shop.user.business_type.capitalize%> / </b>
+<%=shop.shop_country.capitalize%><b> . </b><%=shop.shop_city.capitalize%></h5>
+<h6><%= time_ago_in_words(shop.created_at) %> ago</h6>
+<h5><b>Shop Name - </b><%=shop.shop_name%></h5>
+<h5><b>Shop Market type - </b><%=shop.market_type%></h5>
+<p class="text-muted"><%= shop.description.first(110) %> </p>
+</ol>
+
+</div>
+</div>
+
+<div class="shopview">
+</br>
+<b>
+<%= link_to "View shop",prod_path(shop.user.id),class: "my-primary btn" %>
+</b>
+<% if user_signed_in? %> 
+<% if shop.user_id == current_user.id %>
+<h6>
+<%= link_to "Delete", shop_path(shop), method: :delete, data: { confirm: "Are you sure?" } %>
+</h6>
+<%end%>
+<%end%>
+</div>
+</div>
+</div>
+<%end%>
+
+</div>
+
+<div class="col-md-4 col-md-offset-1 visible-md visible-lg visible-xl">
+
+<%@zza.each do  |offer|%>
+
+<div class="panel panel-default">
+<ol>
+<h5><b><%=offer.shop_name.capitalize%></b></h5> 
+<h5><%=offer.offer.capitalize%></h5>
+<h5><%=offer.offerdaystart%></h5>
+<h5><%=link_to "view shop",prod_path(offer.user.id),class: "my-primary btn-sm" %></h5>
+<h5><b><%=offer.user.business_type.capitalize%> / </b>
+<%=offer.user.contry%><b> . </b><%=offer.user.city%></h5>
+<h6><%= time_ago_in_words(offer.created_at) %> ago</h6>
+
+<% if user_signed_in? %> 
+<% if offer.user_id == current_user.id %>
+<h6><%= link_to "Edit", edit_zza_path(offer) %>
+<%= link_to "Delete", zza_path(offer), method: :delete, data: { confirm: "Are you sure?" } %>
+</h6>
+<%end%>
+<%end%>
+</ol>
+</div>
+<%end%>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>

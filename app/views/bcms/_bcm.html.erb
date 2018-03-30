@@ -1,0 +1,19 @@
+
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to bcm.user.username.capitalize, profil_path(bcm.user.id) %></h5>
+    <h6><b><%=bcm.user.business_type.capitalize%></b>
+    <%=bcm.user.contry%></h6>
+      <h6><%= time_ago_in_words(bcm.created_at) %> ago</h6>
+
+  </br>
+ <p class="text-secondary"><%= bcm.content %></p>
+  </br>
+  <div class="links btn-group">
+   <% if bcm.user_id == current_user.id %>
+<%= link_to "Edit", edit_ba_bcm_path(bcm.ba, bcm) %>
+<%= link_to "Delete", ba_bcm_path(bcm.ba, bcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%>
+</div>
+</div></ol>

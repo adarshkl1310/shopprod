@@ -1,0 +1,14 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to @zza.user.username.capitalize, profil_path(@zza.user.id) %></h5>
+    <h6><b><%=@zza.user.business_type.capitalize%></b>
+    <%=@zza.user.contry%></h6>
+  </br>
+ <p class="text-secondary"><%= zzcm.content %></p>
+  </br>
+  <div class="links btn-group">
+<%= link_to "Edit", edit_zza_zzcm_path(zzcm.zza, zzcm) %>
+<%= link_to "Delete", zza_zzcm_path(zzcm.zza, zzcm), method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
+</div></ol>

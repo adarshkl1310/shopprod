@@ -1,0 +1,18 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to qcm.user.username.capitalize, profil_path(qcm.user.id) %></h5>
+    <h6><b><%=qcm.user.business_type.capitalize%></b>
+    <%=qcm.user.contry%></h6>
+     <h6><%= time_ago_in_words(qcm.created_at) %> ago</h6>
+ 
+  </br>
+ <p class="text-secondary"><%= qcm.content %></p>
+  </br>
+  <div class="links btn-group">
+   <% if qcm.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_qa_qcm_path(qcm.qa, qcm) %>
+<%= link_to "Delete", qa_qcm_path(qcm.qa, qcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%></div>
+</div></ol>

@@ -1,0 +1,2 @@
+module YasHelper
+end

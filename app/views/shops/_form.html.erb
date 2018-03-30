@@ -1,0 +1,88 @@
+
+
+<div class="panel panel-default">
+
+
+ <div class="row">
+<div class="col-md-10 col-md-offset-1">
+</br>
+</br>
+<ol>
+<%= simple_form_for @shop, url: shops_path, html: { multipart: true } do |f|%>
+<lable>
+<b><%= f.label :Shop_name,"Shop Name(Full shop name)" %></b> <small class="text-info">(required)</small> :</br>
+</lable>
+<%= f.text_field :shop_name,:size=>"70",:maxlength=>"30",placeholder:'Ex - XYZ book retail shop, ABC toy manufacturer',class: "form-control"%></br>
+
+<b><%= f.label :market_type,"Shop Market Type"%></b> <small class="text-info">(required)</small> :</br>
+<%= f.radio_button :market_type,'local'%>Local&nbsp;
+<%= f.radio_button :market_type,'state'%>State&nbsp;
+<%= f.radio_button :market_type,'country'%>Country&nbsp;
+<%= f.radio_button :market_type,'global'%>Global</br>
+
+
+</br>
+
+<b><%= f.label :shop_city,"Shop City" %></b> <small class="text-info">(required)</small> :</br>
+<%= f.text_field :shop_city,:size=>"70",:maxlength=>"20",class: "form-control"%>
+</br>
+
+<b><%= f.label :shop_country,"Shop Country" %></b> <small class="text-info">(required)</small> :</br>
+<%= f.text_field :shop_country,:size=>"70",:maxlength=>"20",class: "form-control"%>
+</br>
+
+<b><%= f.label :Shop_Description,"Shop Description" %> <small class="text-info">(required)</small> :</b></br>
+<%= f.text_area :description,:size=>"70",:maxlength=>"150",class: "form-control"%>
+</br>
+
+<b><%= f.label :monday,"Shop Day's Open"%></b> <small class="text-info">(required)</small> :</br> 
+<%= f.radio_button :monday,'Monday'%>Monday&nbsp;
+<%= f.radio_button :tuesday,'Tuesday'%>Tuesday&nbsp;
+<%= f.radio_button :wednesday,'Wednesday'%>Wednesday&nbsp;
+<%= f.radio_button :thursday,'Thursday'%>Thursday&nbsp;
+<%= f.radio_button :friday,'Friday'%>Friday&nbsp;
+<%= f.radio_button :saturday,'Saturday'%>Saturday&nbsp;
+<%= f.radio_button :sunday,'Sunday'%>Sunday&nbsp;
+</br>
+</br>
+<b><%= f.label :timeing,'Shop Open Timing' %></b> <small class="text-info">(required)</small> :</br>
+<%= f.text_field :timeing,:size=>"70",:maxlength=>"37",placeholder:' Ex-Morning 9AM to Evening 6PM ',class: "form-control"%></br>
+
+<b><%= f.label :min_order,'Min Order' %></b> <small class="text-info">(optional)</small> :</br>
+<%= f.text_field :min_order,:size=>"70",:maxlength=>"20",class: "form-control"%></br>
+
+<b><%= f.label :supply_ability,'Supply Ability'%></b> <small class="text-info">(optional)</small> :</br>
+<%= f.text_field :supply_ability,:size=>"70",:maxlength=>"20",class: "form-control"%></br>
+
+<b><%= f.label :delivery_time,'Delivery Time' %></b> <small class="text-info">(optional)</small> :</br>
+<%= f.text_field :delivery_time,:size=>"70",:maxlength=>"20",class: "form-control"%></br>
+
+ <b><%= f.label :transportation,'Transportation' %></b> <small class="text-info">(optional)</small> :</br>
+<%= f.text_field :transportation,:size=>"70",:maxlength=>"40",class: "form-control"%></br>
+
+<b><%= f.label :website_link,'Website Link (Give a link people can buy your products or your website.)'%></b> <small class="text-info">(optional)</small> :</br> 
+<%= f.text_field :website_link,:size=>"24",:maxlength=>"30",class: "form-control" ,placeholder:"www.example.com"%></br>
+
+
+</b><%= f.label :sphotp,'Shop/Office front Image'%> &nbsp;:</b>
+ <% if @shop.sphoto.exists? %>
+      <%= image_tag @shop.sphoto.url(:med) %>
+    <% end %>
+
+ <%= f.file_field :sphoto%></br>
+
+
+
+
+<b><%= f.submit"Add Shop Information",class: "my-primary btn"%></b>
+<%end%>
+ 
+ </br>
+<h5>If you are creating a second shop name post, delete your old shop name post on your profile page.</h5>
+
+</ol>
+</br>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,2 @@
+module HcmsHelper
+end

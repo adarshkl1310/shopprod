@@ -1,0 +1,2 @@
+module VasHelper
+end

@@ -1,0 +1,18 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to fcm.user.username.capitalize, profil_path(fcm.user.id) %></h5>
+    <h6><b><%=fcm.user.business_type.capitalize%></b>
+    <%=fcm.user.contry%></h6>
+      <h6><%= time_ago_in_words(fcm.created_at) %> ago</h6>
+
+  </br>
+ <p class="text-secondary"><%= fcm.content %></p>
+  </br>
+  <div class="links btn-group">
+ <% if fcm.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_fa_fcm_path(fcm.fa, fcm) %>
+<%= link_to "Delete", fa_fcm_path(fcm.fa, fcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%></div>
+</div></ol>

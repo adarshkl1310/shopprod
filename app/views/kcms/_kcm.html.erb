@@ -1,0 +1,20 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to kcm.user.username.capitalize, profil_path(kcm.user.id) %></h5>
+    <h6><b><%=kcm.user.business_type.capitalize%></b>
+    <%=kcm.user.contry%></h6>
+       <h6><%= time_ago_in_words(kcm.created_at) %> ago</h6>
+
+
+  </br>
+ <p class="text-secondary"><%= kcm.content %></p>
+  </br>
+  <div class="links btn-group">
+   <% if kcm.user_id == current_user.id %>
+
+<%= link_to "Edit", edit_ka_kcm_path(kcm.ka, kcm) %>
+<%= link_to "Delete", ka_kcm_path(kcm.ka, kcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%>
+</div>
+</div></ol>

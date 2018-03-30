@@ -1,0 +1,41 @@
+<div class="row">
+<div class="col-md-5">
+ <ol><h5><b>Minimum Order</b></h5></ol>
+ </div>
+    <div class="col-md-7">
+<ol><h5><%= comp.min_order%></h5></ol>
+  </div>
+  </div>
+
+
+
+ <div class="row">
+<div class="col-md-5">
+<ol><h5><b>Supply Ability</b></h5></ol>
+</div>
+  <div class="col-md-7">
+ <ol><h5><%= comp.supply_ability%></h5></ol>
+ </div>
+ </div>
+
+
+
+
+ <div class="row">
+<div class="col-md-5">
+ <ol><h5><b>Delivery Time</b></h5></ol>
+</div>
+  <div class="col-md-7">
+ <ol><h5><%= comp.delivery_time%></h5></ol>
+ </div>
+ </div>
+
+
+  <div class="row">
+<div class="col-md-5">
+<ol><h5><b>Port/Air Name</b></h5></ol>
+ </div>
+   <div class="col-md-7">
+<ol><%= comp.port_air.first(26).capitalize%></ol>
+</div>
+</div>

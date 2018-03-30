@@ -1,0 +1,2 @@
+module ZasHelper
+end

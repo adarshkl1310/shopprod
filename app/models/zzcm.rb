@@ -1,0 +1,5 @@
+class Zzcm < ApplicationRecord
+ 
+
+ 
+end

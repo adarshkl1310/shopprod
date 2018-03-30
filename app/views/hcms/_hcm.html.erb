@@ -1,0 +1,17 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to hcm.user.username.capitalize, profil_path(hcm.user.id) %></h5>
+    <h6><b><%=hcm.user.business_type.capitalize%></b>
+    <%=hcm.user.contry%></h6>
+      <h6><%= time_ago_in_words(hcm.created_at) %> ago</h6>
+
+  </br>
+ <p class="text-secondary"><%= hcm.content %></p>
+  </br>
+  <div class="links btn-group">
+   <% if hcm.user_id == current_user.id %>
+<%= link_to "Edit", edit_ha_hcm_path(hcm.ha, hcm) %>
+<%= link_to "Delete", ha_hcm_path(hcm.ha, hcm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%></div>
+</div></ol>

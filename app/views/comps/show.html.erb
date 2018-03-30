@@ -1,0 +1,65 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+<div class="row">
+
+<div class="col-md-4 col-md-push-6 ">
+
+<ol><h2>(<%=@comp.compcms.count%>)Messages</h2>
+</ol>
+
+<% @comp.compcms.each do |comment| %>
+  <% if [comment.user, @comp.user].include? current_user %>
+
+
+<%= render comment %>
+
+<%end%>
+<%end%>
+
+</div>
+
+
+<% unless @comp.user == current_user %>
+
+<div class="col-md-4 col-md-pull-3">
+<div class="panel panel-default">
+<ol>
+
+<h3>  Send Message to  <%=@comp.user.username.capitalize%></h3></ol>
+
+<%= render 'compcms/form' %>
+
+</div>
+</div>
+<%end%>
+
+</div>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>

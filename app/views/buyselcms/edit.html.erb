@@ -1,0 +1,36 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+<ol>
+
+<div class="col-md-9 col-md-offset-1">	
+<div class="panel panel-default">
+
+<div class="editreplay">
+<h3>Edit Comment</h3>
+</div>
+ 
+<%= simple_form_for([@buysel, @buyselcm]) do |f| %>
+    
+
+       <div class="col-sm-12">
+	<%= f.input :content, label: ".",:input_html => {:rows => 13,:cols => 105,class: "form-control"}  %>
+	</br>
+	</div>
+ <ol> <%= f.submit"Edit Comment", :title => "content can't be blank", :rel => 'tooltip',class: "btn btn-md"%></ol>
+<% end %>
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+</div>
+</ol>
+
+<div>

@@ -1,0 +1,2 @@
+module KcmsHelper
+end

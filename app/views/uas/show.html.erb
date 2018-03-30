@@ -1,0 +1,58 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @ua.user.username.capitalize, profil_path(@ua.user.id) %></h5>
+    <h6><b><%=@ua.user.business_type.capitalize%> / </b>
+    <%=@ua.user.contry%> . <%=@ua.user.city%></h6>
+      <h6><%= time_ago_in_words(@ua.created_at) %> ago</h6>
+ 
+    
+    <div class="aasproductinfo ">
+    <p class="text-secondary"><b>Post Type - </b><%= @ua.post_type %></p>
+ 
+      <p class="text-secondary"><b>Market type -</b> <%=@ua.market_type.capitalize%></p>
+    <p class="text-secondary"><b>Name - </b><%= @ua.product_name %></p>
+    </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @ua.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back",uas_path, class: "btn btn-default" %>
+    <% if @ua.user_id == current_user.id %>
+
+   <%= link_to "Delete",ua_path(@ua), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@ua.ucms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @ua.ucms %></p>
+ </div>
+ </div>
+    <div class="panel-body">
+ <%= render 'ucms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

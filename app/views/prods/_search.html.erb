@@ -1,0 +1,14 @@
+<div class="input-group">
+<h3><%=form_tag prods_path, :method => 'get' do %>
+   <p>
+   
+ <%= text_field_tag :search, params[:search],:size=>"40", placeholder: "  Shop Name ",class: "form-control"%>
+    <%= submit_tag "Search", :shop_name => nil,class: "btn btn-primary" %>
+   
+    
+    
+ </p>
+
+<% end %>
+</h3>
+</div>

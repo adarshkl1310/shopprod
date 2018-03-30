@@ -1,0 +1,197 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+
+
+
+<div class="row">
+<% if user_signed_in? %>
+<div class="col-md-7">
+<div class="panel panel-default"> 
+  <h4 class="text-center text-info"><b>Share product or business information.</b></h4>
+  <%= render 'form' %>
+  </div>
+  </div>
+  <%else%>
+
+<div class="col-md-7">
+<div class="panel-heading">
+  <b><p class="text-left text-info">Sign Up or Sign In to share product or business information  </b></p>
+  <ol><p class=""><%=link_to"join us",new_user_session_path,class: "btn btn-info btn-md" %> </p></ol>              
+</div>
+</div>
+<% end %>
+
+
+
+<div class="col-md-4 col-md-offset-1">
+
+<div class="col-md-12 visible-md visible-lg visible-xl">
+<% if user_signed_in? %>
+
+<h4 ><%=image_tag("photos/shop2.png",:size => "110x80",class: "img-responsive center-block")%></h4>
+
+<h4 class="text-center text-info">Shopprod is where you can Share and gather, Products or business information.</h4>
+
+<h4 class="text-center text-info">We offer shop to sell your products, skills, services and more.</h4>
+</br>
+<%end%>
+
+</div>
+<h4 class=" text-secondary text-center"><%="International trade statistics"%></h4>
+<ol><h5 class="text-center"><%=link_to "view statistics",buyselcms_path,class: "btn btn-default btn-md"%></h5></ol>
+
+
+</div>
+
+</div>
+
+
+<div class="row">
+<div class="col-md-5 "> 
+<div class="searchbar"><%= render 'search' %></div>
+</div>
+
+
+
+<div class="col-md-3 col-md-offset-4"> 
+<div class="panel panel-default"> 
+<h4 class="text-center">users</h4>
+<h5 class="text-center"><%=link_to "view all user",new_buysel_path%></h5>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+
+<div class="col-md-9">	
+<%@buysels.each do |buysel| %>
+
+<div class="col-md-6 visible-lg visible-md visible-xl">
+<div class="panel panel-default">
+ <div class="card">
+<div class="card-block">
+
+<h4 class="card-title">
+</br>
+<ol><h5><%=link_to buysel.user.username.first(30).capitalize, profil_path(buysel.user.id)%> </h5>
+<h5><b><%=buysel.user.business_type.capitalize%> / </b>
+<%=buysel.user.contry.first(14).capitalize %> <b>.</b>
+	<%=buysel.user.city.first(12).capitalize%></h5>
+<h6><%= time_ago_in_words(buysel.created_at) %> ago</h6>
+ </ol></h4>
+
+<div class="row">
+<div class="col-md-6">  
+<div class="card-img">
+<%if buysel.hphoto.present?%>
+<ol><%=image_tag buysel.hphoto.url(:thumb),:size => "150x150", :crop => :fill%></ol>
+<%else%>
+</br>
+<ol><%=image_tag("photos/noimage.png",width: "150px")%></ol>
+</br>
+<%end%>
+</div>
+</div>
+
+<div class="col-md-6">
+<p class="card-text">
+</br>
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=buysel.post_type%></p>
+    <p class="text-secondary"><b>Market type - </b><%=buysel.market_type.capitalize%></p></p></ol>
+</div>
+</div>
+
+<p class="card-text">
+
+<ol><p class="text-secondar"><b>Name - </b><%=buysel.product_name.first(100)%></p>
+<p class="text-muted"><%= buysel.description.first(200) %> </p>
+</ol>
+</p>
+<p class="card-text">
+<ol><h5>(<%=buysel.buyselcms.count%>) Comment</h5></ol>
+<h4>
+
+<ol><%= link_to "View Post", buysel,class: "my-primary btn" %></ol>
+</p>
+</h4>
+</div>
+</div>
+</br>
+</div>
+</div>
+
+
+
+
+<div class="col-md-6 visible-sm visible-xs">
+<div class="panel panel-default">
+
+<ol><h5><%=link_to buysel.user.username.first(30).capitalize, profil_path(buysel.user.id)%> </h5>
+<h5><b><%=buysel.user.business_type.capitalize%> / </b>
+<%=buysel.user.contry.first(14).capitalize %> <b>.</b>
+  <%=buysel.user.city.first(12).capitalize%></h5>
+<h6><%= time_ago_in_words(buysel.created_at) %> ago</h6>
+ </ol>
+
+<div class="row">
+<div class="col-md-6">  
+<ol><%=image_tag buysel.hphoto.url(:thumb),:size => "150x150", :crop => :fill%></ol>
+</div>
+
+<div class="col-md-6">
+</br>
+</br>
+<ol><p class="text-secondary"><b>Post Type - </b><%=buysel.post_type%></p>
+    <p class="text-secondary"><b>Market type - </b><%=buysel.market_type.capitalize%></p>
+    </ol>
+</div>
+</div>
+
+<ol><p class="text-secondar"><b>Name - </b><%=buysel.product_name.first(305)%></p>
+<p class="text-muted"><%= buysel.description.first(510) %> </p>
+</ol>
+
+
+<ol><h5>(<%=buysel.buyselcms.count%>) Comment</h5></ol>
+<h4>
+
+<ol><%= link_to "View Post", buysel,class: "my-primary btn" %></ol>
+</h4>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<% end %>
+</div>
+
+
+
+
+
+
+
+<div class="col-md-3 visible-md visible-lg visible-xl">	
+
+<div class="panel-group">
+  <%@users.each do|user|%>
+   <div class="panel panel-default">
+<ol><h5><%=link_to user.username.first(20).capitalize, profil_path(user.id)%></h5>
+<p class="text-muted"><b><%=user.business_type.capitalize%> / </b><%=user.contry.first(11) %>.<%=user.city.first(11)%> </p>
+<%=user.industry.capitalize %> <%="industry"%> </ol>
+</div>
+<%end%>
+</div>
+</div>
+
+</div>
+</div>

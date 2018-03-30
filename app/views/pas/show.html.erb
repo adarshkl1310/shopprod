@@ -1,0 +1,58 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @pa.user.username.capitalize, profil_path(@pa.user.id) %></h5>
+    <h6><b><%=@pa.user.business_type.capitalize%> / </b>
+    <%=@pa.user.contry%> . <%=@pa.user.city%></h6>
+      <h6><%= time_ago_in_words(@pa.created_at) %> ago</h6>
+
+    
+    <div class="aasproductinfo ">
+       <p class="text-secondary"><b>Post Type - </b><%= @pa.post_type %></p>
+  
+      <p class="text-secondary"><b>Market type -</b> <%=@pa.market_type.capitalize%></p>
+    <p class="text-secondary"><b>Name - </b><%= @pa.product_name %></p>
+    </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @pa.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back",pas_path, class: "btn btn-default" %>
+    <% if @pa.user_id == current_user.id %>
+
+   <%= link_to "Delete",pa_path(@pa), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@pa.pcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+
+ <p><%= render @pa.pcms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'pcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

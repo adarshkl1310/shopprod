@@ -1,0 +1,45 @@
+
+<div class="container">
+</br>
+
+
+<%= form_for @ra do |f|%>
+
+ <div class="row">
+<div class="col-sm-4">
+
+<b><%= f.text_field :product_name,placeholder:'Prod or biz Name',:maxlength=>"500",:size=>"30px",class: "form-control"%></b>
+
+</div>
+<div class="col-sm-4">
+<div class="formmarkettype">
+<%= f.label :post_type%>&nbsp;=&nbsp;
+<%= f.radio_button :post_type,"Ask?"%>Ask group&nbsp;&nbsp;
+<%= f.radio_button :post_type,"Share"%>Share</br></br>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-10">
+<%= f.label :market_type,"Market type"%>&nbsp;=&nbsp;
+<%= f.radio_button :market_type,'local'%>Local&nbsp;
+<%= f.radio_button :market_type,'state'%>State&nbsp;
+<%= f.radio_button :market_type,'country'%>Country&nbsp;
+<%= f.radio_button :market_type,'global'%>Global</br>
+</div>
+</div>
+</br>
+<div class="row">
+<div class="col-sm-6">
+<%= f.text_area :description,placeholder:'Prod or biz Description',:maxlength=>"4000",:rows => 2,:cols => 45,class: "form-control"  %></br>
+</div>
+</div>
+
+<%= f.submit"Publish", :title => "Name,Post,market type,Description can't be blank", :rel => 'tooltip',class: "btn btn-md"%>
+</br>
+</br>
+<%end%>
+<p><small>Name,Post,Market Type,Description can't be blank</small></p>
+
+</div>

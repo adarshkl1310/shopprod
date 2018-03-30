@@ -1,0 +1,8 @@
+
+
+</br>
+<ol><%=simple_form_for([@comp,@comp.compcms.build]) do |f| %>
+	<%= f.input :content,:maxlength=>"220",label: "."%></br>
+	<%= f.button :submit,"Send Message",:class => 'btn-custom' %>
+<% end %></ol>
+

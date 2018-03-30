@@ -1,0 +1,28 @@
+// Place all the styles related to the Groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+      
+.button1 .row .col-md-4   {position: relative;
+           
+              top:30px;}
+
+
+ .group {
+      background-color:rgb(227, 229, 228);
+
+
+
+      margin: 0;
+      padding:0;
+    position: absolute;
+    overflow: hidden;
+    width:100%;
+    } 
+.group1 .col-md-3{
+  display:flex;
+  flex-wrap:wrap;
+
+ }

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-inverse navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+
+<div class="collapse navbar-collapse" id="myNavbar">
+
+          <ul class="nav navbar-nav">
+      
+        
+          <li><%= link_to "Home",buysels_path%></li>
+           <li><%=link_to "Shop",prods_path%></li>
+
+<a>
+        <%=link_to (image_tag("photos/ishop.png",:size => "83x79",class: "img_class_goes_here")),buysels_path,class: "navbar-brand visible-md visible-lg visible-xl"%></a>
+             
+           
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "About us",shops_path%></li>
+      <li><%= link_to "login",new_user_session_path%></li>
+      <li><%= link_to "register", new_user_registration_path%></li>
+    </ul>
+  </div>
+  </div>
+</nav>
+  
+
+</body>
+
+</html>

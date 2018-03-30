@@ -1,0 +1,56 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+    <div class="col-md-9 col-md-offset-1">
+      <div class="panel-group"> 
+    
+    <div class="panel panel-default">
+    <div class="panel-heading">
+   
+    <h5><%=link_to @tt.user.username.capitalize, profil_path(@tt.user.id) %></h5>
+    <h6><b><%=@tt.user.business_type.capitalize%> / </b>
+    <%=@tt.user.contry%> . <%@tt.user.city%></h6>
+      <h6><%= time_ago_in_words(@tt.created_at) %> ago</h6>
+    
+    <div class="aasproductinfo ">
+     <p class="text-secondary"><b>Post Type - </b><%= @tt.post_type %></p>
+
+       <p class="text-secondary"><b>Market type -</b> <%=@tt.market_type.capitalize%></p>
+     <p class="text-secondary"><b>Name - </b><%= @tt.product_name %></p>
+       </div>
+
+    <div class="aasdescription">
+   <p class="text-secondary"> <%= @tt.description %></p>
+    </div>
+                 
+   <div class="links btn-group">
+   <%= link_to "Back", tts_path, class: "btn btn-default" %>
+    <% if @tt.user_id == current_user.id %>
+
+   <%= link_to "Delete", tt_path(@tt), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %><%end%>
+   </div>
+
+
+   </div>
+   </div>
+
+   
+
+
+ <div class="panel-heading">
+  <h4>(<%=@tt.tcms.count%>) Comment</h4>
+  <div class="panel-body">
+  <div class="replyquestion">
+ <p><%= render @tt.tcms %></p>
+ </div>
+</div>
+    <div class="panel-body">
+ <%= render 'tcms/form' %>
+ </div>
+ </div>
+</div>
+</div>
+</div>

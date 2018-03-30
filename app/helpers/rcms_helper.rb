@@ -1,0 +1,2 @@
+module RcmsHelper
+end

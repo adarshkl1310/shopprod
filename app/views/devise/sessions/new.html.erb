@@ -1,0 +1,88 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+</br>
+
+
+  <div class="row">
+    <div class="col-md-6">
+
+    
+  
+   
+
+<ol><h2>Log in</h2>
+
+</br>
+<%=form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+   <b> <%= f.label :email,'Email' %> : </b><br />
+
+    <%= f.email_field :email, autofocus: true,:size=>"50",:maxlength=>"55",class: "form-control"   %>
+  </div>
+</br>
+  <div class="field">
+    <b><%= f.label :password %> : </b><br />
+    <%= f.password_field :password, autocomplete: "off",:size=>"50",:maxlength=>"55",class: "form-control"    %>
+  </div></br>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%></br>
+
+  <div class="actions">
+    <%= f.submit "Log in",class: "my-primary btn" %>
+  </div>
+<% end %>
+</br>
+<%= render "devise/shared/links" %>
+</br>
+</br>
+<ol>
+
+
+
+
+</div>
+</br>
+
+
+ <div class="col-md-4 col-md-offset-1">
+
+  
+    
+
+<%=image_tag("photos/shopnetwork.png",:size => "450x150", :crop => :fill, class: "img-responsive")%>
+
+</div>
+
+ <div class="col-md-5 col-md-offset-1 ">
+   
+    
+    
+    </br>
+
+
+<h4><%="Shopprod promotes you to connect the World's shops and businesses. We also help you to share and gather product information."%></h4>
+
+
+
+
+
+    </div>
+
+
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</div>

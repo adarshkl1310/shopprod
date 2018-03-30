@@ -1,0 +1,2 @@
+module ProdsHelper
+end

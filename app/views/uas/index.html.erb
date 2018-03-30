@@ -1,0 +1,96 @@
+<div class="body container-fluid">
+</br>
+</br>
+</br>
+                  
+ <h4>&nbsp;<b><%=" Laboratory & Measuring instruments group"%></b></h4>
+ </br>
+
+<div class="row">
+ <div class="col-md-7">
+ <div class="panel panel-default">
+ <h4 class="text-center text-info"><b>Share product or business information.</b></h4>
+ 
+ <%= render 'form' %>
+ 
+ </div>
+ </div>
+ <div class="col-md-4 visible-md visible-lg visible-xl">
+ </br>
+ </br>
+<ol><h4 class="text-info text-center">A place Shares and gather, Products or business information in  Laboratory & Measuring instruments group.</h4></ol>
+ </br>
+ </br>
+ </br>
+ </br>
+ </br>
+ </div>
+
+ <div class="col-md-3 col-md-offset-2">
+<div class="panel panel-default">
+<h5 class="text-center"><%=" Laboratory & Measuring instruments group"%></h5>
+<h4 class="text-center">users</h4>
+<h5 class="text-center"><%=link_to "view all user",new_ua_path%></h5>
+</div>
+</div>
+
+
+ </div>
+
+
+
+<div class="row">
+<div class="col-md-9">	
+
+
+<%@uas.each do |ua| %>
+<div class="panel panel-default">
+<div class="panel-heading">
+<ol>
+<h5><%=link_to ua.user.username.capitalize, profil_path(ua.user.id)%>  </h5>
+<h5><b><%=ua.user.business_type.capitalize%> / </b>
+<%=ua.user.contry%><b> . </b><%=ua.user.city%></h5>
+  <h6><%= time_ago_in_words(ua.created_at) %> ago</h6>
+</br>
+</ol>
+<div class="aasproductinfo ">
+<ol>
+<p class="text-secondary"><b>Post Type -</b> <%=ua.post_type%></p>
+<p class="text-secondary"><b>Market Type -</b> <%=ua.market_type%></p>
+<p class="text-secondary"><b>Name - </b><%=ua.product_name.first(250)  %></p>
+</ol>
+</div>
+
+<div class="aasdescription">
+<ol>
+<p class="text-muted"><%= ua.description.first(500) %> </p>
+</br>
+<h5 class="text-left">(<%=ua.ucms.count%>) Comment</h5>
+<h4>
+<%= link_to "View Post", ua,class: "my-primary btn" %>
+</h4>
+</ol>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+<div class="col-md-3 visible-md visible-lg visible-xl">	
+<div class="panel-group">
+<%@users.each do |i|%>
+
+<div class="panel panel-default">
+<ol>
+<%=link_to i.username.capitalize.first(20)  %>
+<p class="text-muted"><b><%=i.business_type.capitalize %> . </b><%=i.contry.first(15) %></p>
+</ol>
+</div>
+<%end%>
+</div>
+</div>
+
+
+
+</div>
+
+</div>

@@ -1,0 +1,14 @@
+// Place all the styles related to the Gcms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.newStep {  opacity: 1.0;
+    filter: alpha(opacity=100)}
+
+.newStep:hover {
+
+opacity: 0.5;
+    filter: alpha(opacity=50)
+
+}

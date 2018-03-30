@@ -1,0 +1,2 @@
+module XcmsHelper
+end

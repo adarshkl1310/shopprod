@@ -1,0 +1,22 @@
+ <div class="row">
+<div class="col-md-5 col-md-offset-3">
+</br>
+<ol><h3>Add photo</h3></ol>
+</br>
+<%=simple_form_for @profil, url: profils_path, html: { multipart: true } do |f| %>
+
+<ol><b><%= f.label :user_photo,'Your Photo'%></b> <small class="text-info">(required)</small> : </br>
+ <%= f.file_field :uphoto%></br>
+
+<b><%=f.label :date_of_birth,'Birth Year'%></b> <small class="text-info">(required)</small> :</br>
+<%= f.date_field :date_of_birth,:order => [:day, :month, :year]%>
+</br>
+</br>
+
+<%= f.submit"Upload Image",:title => "Your photo, Birth year can't be blank", :rel => 'tooltip',class: "my-primary btn"%>
+
+<%end%>
+<p><small>If you are creating a second add photo post, delete your old  photo post on your profile page.</small></p></ol>
+</br>
+</div>
+</div>

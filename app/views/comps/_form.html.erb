@@ -1,0 +1,67 @@
+ 
+ 
+
+
+ <div class="row">
+<div class="col-md-10 ">
+<%=simple_form_for @comp do |f|%>
+
+
+ </br> 
+<ol>
+<b ><%=f.label :company_name,'Company/shop Name'%></b> <small class="text-info">(required)</small></br>
+
+<%= f.text_field :company_name,:size=>"55", :maxlength=>"30",class: "form-control" %></br>
+
+<b><%= f.label :Company_Phone_num,'Company/shop Phone num'%></b>  <small class="text-info">(required)</small></br>
+<%= f.text_field :company_phone,:size=>"55", :maxlength=>"20",class: "form-control"%></br>
+
+
+<b><%= f.label :company_address,'Company/shop Address'%></b> <small class="text-info">(required)</small></br>
+<%= f.text_area :company_address,:size=>"54", :maxlength=>"120",class: "form-control"%></br>
+
+<b><%= f.label :year_establishment,'Year Eestabishment '%></b> <small class="text-info">(required)</small></br>
+<%= f.date_field :year_establishment,:size=>"55", :maxlength=>"15",class: "form-control"%></br>
+
+<b><%= f.label :total_employees,'Total Employees'%></b> <small class="text-info">(required)</small></br>
+<%= f.text_field :total_employees,:size=>"55", :maxlength=>"10",class: "form-control"%></br>
+
+
+<b><%= f.label :Total_company_revenue,'Total revenue'%></b> <small class="text-info">(optional)</small></br>
+<%= f.text_field :total_company_revenue,:size=>"55", :maxlength=>"20",class: "form-control"%></br>
+
+<b><%= f.label :total_annual_revenue,'Total annual revenue'%></b> <small class="text-info">(optional)</small></br>
+<%= f.text_field :total_annual_revenue,:size=>"55", :maxlength=>"20",class: "form-control"%></br>
+
+
+
+ <b class="text-primary"><%="Gobal : "%> 
+
+ </b>
+ </br> 
+</br>
+<b><%= f.label :target_contry,'Target Country'%></b> <small class="text-info">(optional)</small></br>
+<%= f.text_field :target_contry,:size=>"55", :maxlength=>"55",class: "form-control"%></br>
+
+
+<b><%= f.label :oem_odm,'OEM/ODM Certification'%></b> <small class="text-info">(optional)</small>&nbsp;&nbsp;:&nbsp;&nbsp;
+<%= f.radio_button :oem_odm,"Yes"%>Yes &nbsp;&nbsp;
+<%= f.radio_button :oem_odm,"No"%>No</br></br>
+
+
+<b><%= f.label :standard_certification,'Standard Certification' %></b> <small class="text-info">(optional)</small></br>
+<%= f.text_field :standard_certification,:size=>"55", :maxlength=>"50",class: "form-control"%></br>
+
+ <b class="text-primary"><%="Company/shop story : "%> </b>
+ <small class="text-info">(optional)</small>
+</br>
+</br>
+<%= f.text_area :success_failure,:size=>"55",:placeholder=>"Business/shop strategy, success or establishment story", :maxlength=>"200",class: "form-control"%></br>
+<b><%= f.submit"Add Information",class: "my-primary btn"%></b></ol>
+<%end%>
+
+<ol><h5>If you are creating a second Business/Shop information post, delete your old Business/Shop information post on your profile page.</h5></ol>
+
+
+</div>
+</div>

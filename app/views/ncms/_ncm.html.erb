@@ -1,0 +1,17 @@
+
+</br>
+<div class="panel panel-default">
+  <ol><h5><%=link_to ncm.user.username.capitalize, profil_path(ncm.user.id) %></h5>
+    <h6><b><%=ncm.user.business_type.capitalize%></b>
+    <%=ncm.user.contry%></h6>
+      <h6><%= time_ago_in_words(ncm.created_at) %> ago</h6>
+
+  </br>
+ <p class="text-secondary"><%= ncm.content %></p>
+  </br>
+  <div class="links btn-group">
+   <% if ncm.user_id == current_user.id %>
+<%= link_to "Edit", edit_na_ncm_path(ncm.na, ncm) %>
+<%= link_to "Delete", na_ncm_path(ncm.na, ncm), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%></div>
+</div></ol>

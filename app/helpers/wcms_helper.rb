@@ -1,0 +1,2 @@
+module WcmsHelper
+end
